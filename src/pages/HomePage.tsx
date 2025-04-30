@@ -8,6 +8,7 @@ import ContactSection from '../components/ContactSection';
 import InstagramSection from '../components/InstagramSection.tsx'; 
 import FinancingSection from '../components/FinancingSection';   
 import { WorkingHours } from '../components/WorkingHours';
+import WhatsappSection from '../components/WhatsappSection';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <ServicesSection />
       <StatsSection />
+      <WhatsappSection />
       <TestimonialsSection />
       <InstagramSection /> 
       <FinancingSection /> 

@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom';
 import fundo1 from '../assets/images/background/fundo1.png';
 import fundo2 from '../assets/images/background/fundo2.png';
 
-
-const backgroundImages = [
-  fundo1,
-  fundo2
-];
+const backgroundImages = [fundo1, fundo2];
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -32,7 +28,7 @@ const HeroSection: React.FC = () => {
         {backgroundImages.map((url, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-center bg-cover transition-opacity duration-1000`}
+            className="absolute inset-0 bg-center bg-cover transition-opacity duration-1000"
             style={{
               backgroundImage: `url(${url})`,
               opacity: index === bgIndex ? 1 : 0,
@@ -61,12 +57,12 @@ const HeroSection: React.FC = () => {
                 Conheça Nossos Serviços
                 <ArrowRight size={18} className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
-              <Link
-                to="/contato"
+              <a
+                href="#contatowhatsapp"
                 className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-blue-800 py-3 px-6 rounded-lg font-medium transition-all duration-200"
               >
                 Fale Conosco
-              </Link>
+              </a>
             </div>
           </div>
 

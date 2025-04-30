@@ -6,7 +6,6 @@ import painelcomercial from '../assets/images/servicos/painelcomercial.png';
 import comissionamento from '../assets/images/servicos/comissionamento.png';
 import limpezapainel from '../assets/images/servicos/limpezapainel.jpg';
 
-
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
@@ -24,7 +23,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
       <img
         src={imageUrl}
         alt={title}
-        className="w-full h-56 object-cover rounded-xl mb-5"
+        className={`w-full h-56 rounded-xl mb-5 ${
+          title === 'Comercial' ? 'object-cover scale-[0.97]' : 'object-cover'
+        }`}
       />
       <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
         {icon}
@@ -41,7 +42,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
     </div>
   );
 };
-
 
 const ServicesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -68,7 +68,6 @@ const ServicesSection: React.FC = () => {
       }
     };
   }, []);
-
 
   const services = [
     {
@@ -100,7 +99,6 @@ const ServicesSection: React.FC = () => {
   return (
     <div ref={sectionRef} className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll opacity-0">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Nossas Soluções Energéticas

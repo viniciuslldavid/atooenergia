@@ -35,7 +35,9 @@ export function WorkingHours() {
           </p>
           <a
             href="#contato" // Link para sua seção de contato
-            className="inline-block bg-blue-800 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-900 text-white px-8 py-3 rounded-full font-medium tracking-wide shadow hover:bg-blue-800 hover:scale-105 transform transition duration-300"
           >
             Agendar Horário
           </a>
