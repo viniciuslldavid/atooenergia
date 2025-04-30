@@ -1,25 +1,36 @@
 import React, { useEffect, useRef } from 'react';
 import { Sun, Home, Building2, ArrowUpRight, Gauge, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import painelresidencial from '../assets/images/servicos/painelresidencial.png';
+import painelcomercial from '../assets/images/servicos/painelcomercial.png';
+import comissionamento from '../assets/images/servicos/comissionamento.png';
+import limpezapainel from '../assets/images/servicos/limpezapainel.jpg';
+
 
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   delay: number;
+  imageUrl: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay, imageUrl }) => {
   return (
     <div 
-      className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 group animate-on-scroll opacity-0"
+      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 group animate-on-scroll opacity-0"
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="w-14 h-14 rounded-lg bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors duration-300">
+      <img
+        src={imageUrl}
+        alt={title}
+        className="w-full h-56 object-cover rounded-xl mb-5"
+      />
+      <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-gray-800 mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
+      <h3 className="text-2xl font-semibold text-gray-800 mb-3">{title}</h3>
+      <p className="text-gray-600 text-base mb-4">{description}</p>
       <Link 
         to="/servicos" 
         className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
@@ -31,28 +42,26 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
   );
 };
 
+
 const ServicesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll('.animate-on-scroll');
-            elements.forEach((el) => {
-              el.classList.add('animate-fade-in');
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const elements = entry.target.querySelectorAll('.animate-on-scroll');
+          elements.forEach((el) => {
+            el.classList.add('animate-fade-in');
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -60,37 +69,38 @@ const ServicesSection: React.FC = () => {
     };
   }, []);
 
+
   const services = [
-    {
-      icon: <Sun className="w-8 h-8 text-yellow-500" />,
-      title: 'Energia Solar',
-      description: 'Instalação e manutenção de painéis solares para residências e empresas com garantia de 25 anos.'
-    },
     {
       icon: <Home className="w-8 h-8 text-blue-500" />,
       title: 'Residencial',
-      description: 'Soluções personalizadas para reduzir o consumo e otimizar a eficiência energética da sua casa.'
+      description: 'Soluções personalizadas para reduzir o consumo e otimizar a eficiência energética da sua casa.',
+      imageUrl: painelresidencial
     },
     {
       icon: <Building2 className="w-8 h-8 text-green-500" />,
       title: 'Comercial',
-      description: 'Reduza seus custos operacionais e aumente a competitividade do seu negócio com nossas soluções.'
+      description: 'Reduza seus custos operacionais e aumente a competitividade do seu negócio com nossas soluções.',
+      imageUrl: painelcomercial
     },
     {
       icon: <Gauge className="w-8 h-8 text-purple-500" />,
       title: 'Comissionamento de Usinas',
-      description: 'Realizamos testes e calibrações técnicas para garantir que sua usina solar opere com segurança, eficiência e dentro dos parâmetros projetados.'
+      description: 'Realizamos testes e calibrações técnicas para garantir que sua usina solar opere com segurança, eficiência e dentro dos parâmetros projetados.',
+      imageUrl: comissionamento
     },
     {
       icon: <Droplet className="w-8 h-8 text-purple-500" />,
-      title: 'Limpeza e manutenção de sistemas fotovoltaicos',
-      description: 'Oferecemos serviços especializados de limpeza e manutenção preventiva para garantir a performance ideal dos seus sistemas solares.'
+      title: 'Limpeza e manutenção',
+      description: 'Serviços especializados de limpeza e manutenção preventiva para garantir a performance ideal dos sistemas solares.',
+      imageUrl: limpezapainel
     }
   ];
 
   return (
     <div ref={sectionRef} className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
+
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll opacity-0">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Nossas Soluções Energéticas
@@ -109,6 +119,7 @@ const ServicesSection: React.FC = () => {
               title={service.title}
               description={service.description}
               delay={index * 100}
+              imageUrl={service.imageUrl}
             />
           ))}
         </div>

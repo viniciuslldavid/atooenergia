@@ -4,7 +4,10 @@ import ServicesSection from '../components/ServicesSection';
 import StatsSection from '../components/StatsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTASection from '../components/CTASection';
-import ContactSection from '../components/ContactSection';
+import ContactSection from '../components/ContactSection';   
+import InstagramSection from '../components/InstagramSection.tsx'; 
+import FinancingSection from '../components/FinancingSection';   
+import { WorkingHours } from '../components/WorkingHours';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
@@ -38,6 +41,9 @@ const HomePage: React.FC = () => {
       <ServicesSection />
       <StatsSection />
       <TestimonialsSection />
+      <InstagramSection /> 
+      <FinancingSection /> 
+      <WorkingHours />
       <CTASection />
       <ContactSection />
     </div>
