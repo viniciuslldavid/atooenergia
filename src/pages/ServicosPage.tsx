@@ -184,7 +184,11 @@ const ServicosPage: React.FC = () => {
         ))}
       </div>
 
-      <CTASection />
+      <CTASection
+      title="Pronto para transformar sua energia?"
+      buttonText="Agende uma Consulta Gratuita"
+      buttonLink="/contato"
+       />
     </div>
   );
 };

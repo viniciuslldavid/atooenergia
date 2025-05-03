@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Sun, Home, Building2, ArrowUpRight, Gauge, Droplet } from 'lucide-react';
+import { Home, Building2, ArrowUpRight, Gauge, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import painelresidencial from '../assets/images/servicos/painelresidencial.png';
 import painelcomercial from '../assets/images/servicos/painelcomercial.png';
@@ -12,11 +12,19 @@ interface ServiceCardProps {
   description: string;
   delay: number;
   imageUrl: string;
+  linkTo: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay, imageUrl }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  icon,
+  title,
+  description,
+  delay,
+  imageUrl,
+  linkTo,
+}) => {
   return (
-    <div 
+    <div
       className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 group animate-on-scroll opacity-0"
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -32,12 +40,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
       </div>
       <h3 className="text-2xl font-semibold text-gray-800 mb-3">{title}</h3>
       <p className="text-gray-600 text-base mb-4">{description}</p>
-      <Link 
-        to="/servicos" 
+      <Link
+        to={linkTo}
         className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
       >
         Saiba mais
-        <ArrowUpRight size={16} className="ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <ArrowUpRight
+          size={16}
+          className="ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+        />
       </Link>
     </div>
   );
@@ -47,16 +58,19 @@ const ServicesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const elements = entry.target.querySelectorAll('.animate-on-scroll');
-          elements.forEach((el) => {
-            el.classList.add('animate-fade-in');
-          });
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const elements = entry.target.querySelectorAll('.animate-on-scroll');
+            elements.forEach((el) => {
+              el.classList.add('animate-fade-in');
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
@@ -73,27 +87,35 @@ const ServicesSection: React.FC = () => {
     {
       icon: <Home className="w-8 h-8 text-blue-500" />,
       title: 'Residencial',
-      description: 'Soluções personalizadas para reduzir o consumo e otimizar a eficiência energética da sua casa.',
-      imageUrl: painelresidencial
+      description:
+        'Soluções personalizadas para reduzir o consumo e otimizar a eficiência energética da sua casa.',
+      imageUrl: painelresidencial,
+      linkTo: '/servicos/residencial',
     },
     {
       icon: <Building2 className="w-8 h-8 text-green-500" />,
       title: 'Comercial',
-      description: 'Reduza seus custos operacionais e aumente a competitividade do seu negócio com nossas soluções.',
-      imageUrl: painelcomercial
+      description:
+        'Reduza seus custos operacionais e aumente a competitividade do seu negócio com nossas soluções.',
+      imageUrl: painelcomercial,
+      linkTo: '/servicos/comercial',
     },
     {
       icon: <Gauge className="w-8 h-8 text-purple-500" />,
       title: 'Comissionamento de Usinas',
-      description: 'Realizamos testes e calibrações técnicas para garantir que sua usina solar opere com segurança, eficiência e dentro dos parâmetros projetados.',
-      imageUrl: comissionamento
+      description:
+        'Realizamos testes e calibrações técnicas para garantir que sua usina solar opere com segurança, eficiência e dentro dos parâmetros projetados.',
+      imageUrl: comissionamento,
+      linkTo: '/servicos/comissionamento',
     },
     {
       icon: <Droplet className="w-8 h-8 text-purple-500" />,
       title: 'Limpeza e manutenção',
-      description: 'Serviços especializados de limpeza e manutenção preventiva para garantir a performance ideal dos sistemas solares.',
-      imageUrl: limpezapainel
-    }
+      description:
+        'Serviços especializados de limpeza e manutenção preventiva para garantir a performance ideal dos sistemas solares.',
+      imageUrl: limpezapainel,
+      linkTo: '/servicos/limpeza',
+    },
   ];
 
   return (
@@ -118,10 +140,11 @@ const ServicesSection: React.FC = () => {
               description={service.description}
               delay={index * 100}
               imageUrl={service.imageUrl}
+              linkTo={service.linkTo}
             />
           ))}
         </div>
-        
+
         <div className="text-center mt-12 animate-on-scroll opacity-0">
           <Link
             to="/servicos"

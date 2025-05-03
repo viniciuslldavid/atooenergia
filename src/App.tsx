@@ -7,10 +7,14 @@ import SobreNosPage from './pages/SobreNosPage';
 import ServicosPage from './pages/ServicosPage';
 import ContatoPage from './pages/ContatoPage';
 import BlogPage from './pages/BlogPage';
+import ResidentialInstallationsPage from './pages/ResidentialInstallationsPage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage'; // <- Importação adicionada
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
@@ -20,6 +24,8 @@ function App() {
             <Route path="/servicos" element={<ServicosPage />} />
             <Route path="/contato" element={<ContatoPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/servicos/residencial" element={<ResidentialInstallationsPage />} />
+            <Route path="/projetos/:slug" element={<ProjectDetailsPage />} /> {/* Nova rota */}
           </Routes>
         </main>
         <Footer />
