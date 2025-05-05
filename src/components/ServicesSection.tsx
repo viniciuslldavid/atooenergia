@@ -106,7 +106,7 @@ const ServicesSection: React.FC = () => {
       description:
         'Realizamos testes e calibrações técnicas para garantir que sua usina solar opere com segurança, eficiência e dentro dos parâmetros projetados.',
       imageUrl: comissionamento,
-      linkTo: '/servicos/comissionamento',
+      linkTo: '/servicos/comissionamentousinas',
     },
     {
       icon: <Droplet className="w-8 h-8 text-purple-500" />,
@@ -114,7 +114,7 @@ const ServicesSection: React.FC = () => {
       description:
         'Serviços especializados de limpeza e manutenção preventiva para garantir a performance ideal dos sistemas solares.',
       imageUrl: limpezapainel,
-      linkTo: '/servicos/limpeza',
+      linkTo: '/servicos/maintenanceservicePage',
     },
   ];
 

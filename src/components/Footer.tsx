@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SunMoon, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+import logopreta from '../assets/images/logo/logo.png';
+import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,9 +10,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <SunMoon size={32} className="text-blue-400" />
-              <span className="text-2xl font-bold">ATO Energia</span>
+              <img
+                src={logopreta}
+                alt="Logo ATO Energia"
+                className="h-20"
+              />
             </div>
+
             <p className="text-gray-400 mb-6 leading-relaxed">
               Transformando o futuro energético do Brasil com soluções inteligentes e sustentáveis para residências e empresas.
             </p>
@@ -110,8 +115,8 @@ const Footer: React.FC = () => {
               <li className="flex">
                 <MapPin className="h-5 w-5 text-blue-400 mr-3 shrink-0 mt-1" />
                 <span className="text-gray-400">
-                Avenida Belarmino Cotta Pacheco, 411,<br />
-                Santa Mônica, Uberlândia, MG, 38408-168<br />
+                  Avenida Belarmino Cotta Pacheco, 411,<br />
+                  Santa Mônica, Uberlândia, MG, 38408-168<br />
                   Brasil
                 </span>
               </li>

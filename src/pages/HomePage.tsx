@@ -50,7 +50,6 @@ const HomePage: React.FC = () => {
       <FinancingSection />
       <WorkingHours />
       <LocationSection />
-      <CTASection />
       <ContactSection />
       <FABExpand/>
     </div>

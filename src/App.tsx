@@ -8,7 +8,9 @@ import ServicosPage from './pages/ServicosPage';
 import ContatoPage from './pages/ContatoPage';
 import BlogPage from './pages/BlogPage';
 import ResidentialInstallationsPage from './pages/ResidentialInstallationsPage';
-import ProjectDetailsPage from './pages/ProjectDetailsPage'; // <- Importação adicionada
+import CommissioningUsinasPage from './pages/CommissioningUsinasPage'; 
+import MaintenanceServicePage from './pages/MaintenanceServicePage'; 
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -25,7 +27,9 @@ function App() {
             <Route path="/contato" element={<ContatoPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/servicos/residencial" element={<ResidentialInstallationsPage />} />
-            <Route path="/projetos/:slug" element={<ProjectDetailsPage />} /> {/* Nova rota */}
+            <Route path="/servicos/comissionamentousinas" element={<CommissioningUsinasPage />} />
+            <Route path="/servicos/maintenanceservicePage" element={<MaintenanceServicePage />} />
+            <Route path="/projetos/:slug" element={<ProjectDetailsPage />} />
           </Routes>
         </main>
         <Footer />
