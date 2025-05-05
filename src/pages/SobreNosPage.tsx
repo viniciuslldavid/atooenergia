@@ -222,7 +222,11 @@ const SobreNosPage: React.FC = () => {
       </div>
 
       <StatsSection />
-      <CTASection />
+      <CTASection
+      title="Pronto para transformar sua energia?"
+      buttonText="Agende uma Consulta Gratuita"
+      buttonLink="/contato"
+       />
     </div>
   );
 };

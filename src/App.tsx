@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage';
 import SobreNosPage from './pages/SobreNosPage';
 import ServicosPage from './pages/ServicosPage';
 import ContatoPage from './pages/ContatoPage';
-import BlogPage from './pages/BlogPage';
 import ResidentialInstallationsPage from './pages/ResidentialInstallationsPage';
 import CommissioningUsinasPage from './pages/CommissioningUsinasPage'; 
 import MaintenanceServicePage from './pages/MaintenanceServicePage'; 
@@ -25,7 +24,6 @@ function App() {
             <Route path="/sobre-nos" element={<SobreNosPage />} />
             <Route path="/servicos" element={<ServicosPage />} />
             <Route path="/contato" element={<ContatoPage />} />
-            <Route path="/blog" element={<BlogPage />} />
             <Route path="/servicos/residencial" element={<ResidentialInstallationsPage />} />
             <Route path="/servicos/comissionamentousinas" element={<CommissioningUsinasPage />} />
             <Route path="/servicos/maintenanceservicePage" element={<MaintenanceServicePage />} />

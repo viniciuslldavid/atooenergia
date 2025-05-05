@@ -33,15 +33,6 @@ const CTASection: React.FC<CTASectionProps> = ({ title, buttonText, buttonLink }
               <ArrowRight size={18} className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
-            <a
-              href="https://blog.atoenergia.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 py-3 px-8 rounded-lg font-medium transition-all duration-200"
-            >
-              Conheça Nosso Blog
-              <ExternalLink size={18} className="ml-2" />
-            </a>
           </div>
 
           <p className="text-blue-200 mt-8 text-sm">
