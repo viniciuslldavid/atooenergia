@@ -37,6 +37,7 @@ const ProjectDetailsPage: React.FC = () => {
         <img
           src={project.imageUrl}
           alt={`Projeto ${project.title}`}
+          loading="lazy"
           className="w-full rounded-md mb-6 object-cover max-h-96"
         />
 
@@ -66,6 +67,7 @@ const ProjectDetailsPage: React.FC = () => {
                 >
                   <img
                     src={img}
+                    loading="lazy"
                     alt={`Imagem ${i + 1}`}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />

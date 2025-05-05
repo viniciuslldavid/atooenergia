@@ -53,12 +53,16 @@ const ResidentialInstallationsPage: React.FC = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0 } // Alterado de 0.1 para 0
     );
 
-    if (projectsRef.current) observer.observe(projectsRef.current);
+    if (projectsRef.current) {
+      observer.observe(projectsRef.current);
+    }
     return () => {
-      if (projectsRef.current) observer.unobserve(projectsRef.current);
+      if (projectsRef.current) {
+        observer.unobserve(projectsRef.current);
+      }
     };
   }, []);
 
@@ -67,7 +71,7 @@ const ResidentialInstallationsPage: React.FC = () => {
       {/* Projects Section */}
       <section
         ref={projectsRef}
-        className="max-w-6xl mx-auto py-24 px-4 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        className="max-w-6xl mx-auto py-24 px-4 opacity-0 translate-y-10 transition-all duration-1000 ease-out min-h-[50vh]"
       >
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -79,13 +83,19 @@ const ResidentialInstallationsPage: React.FC = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {residentialProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+          {residentialProjects.length > 0 ? (
+            residentialProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))
+          ) : (
+            <p className="text-gray-600 text-center col-span-full">
+              Nenhum projeto residencial encontrado.
+            </p>
+          )}
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Mantida, mas com comentário para facilitar testes */}
       <CTASection
         title="Pronto para transformar sua casa com energia solar?"
         buttonText="Solicitar Orçamento"
