@@ -16,41 +16,7 @@ const MaintenanceServicePage: React.FC = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      {/* Hero Section */}
-      <section
-        className="relative py-32 md:py-40 px-6 sm:px-10 bg-cover bg-center overflow-hidden animate-fade-in"
-        style={{
-          backgroundImage: "url('https://res.cloudinary.com/dlthukrz8/image/upload/v1746328204/fundo2_kf4wkm.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-white/70 to-white/30 backdrop-blur-[2px] z-0" />
-        <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-gray-800">
-            Limpeza e Manutenção de Usinas
-          </h1>
-          <div className="max-w-3xl mx-auto md:mx-0 space-y-6 text-gray-800 text-lg md:text-xl">
-            <div className="flex items-start">
-              <span className="inline-flex items-center justify-center w-10 h-10  text-white rounded-full mr-3 shadow-md">🧽</span>
-              <span>
-                Limpeza especializada de painéis, <span className="font-semibold text-blue-800">inspeção técnica</span> e manutenção preventiva.
-              </span>
-            </div>
-            <div className="flex items-start">
-              <span className="inline-flex items-center justify-center w-10 h-10  text-white rounded-full mr-3 shadow-md">🛠️</span>
-              <span>
-                Equipe qualificada, equipamentos modernos e atendimento com foco em <span className="font-semibold text-blue-800">performance</span>.
-              </span>
-            </div>
-            <div className="flex items-start">
-              <span className="inline-flex items-center justify-center w-10 h-10  text-white rounded-full mr-3 shadow-md">📈</span>
-              <span>
-                Eficiência garantida, aumento da geração e maior durabilidade do sistema fotovoltaico.
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gray-50 text-gray-800 pt-5">
 
       {/* Galeria de Fotos */}
       <section className="max-w-6xl mx-auto py-24 px-4">

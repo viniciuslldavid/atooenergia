@@ -63,52 +63,7 @@ const ResidentialInstallationsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section
-        className="relative py-32 md:py-40 px-6 sm:px-10 bg-cover bg-center overflow-hidden animate-fade-in"
-        style={{
-          backgroundImage: "url('https://res.cloudinary.com/dlthukrz8/image/upload/v1746328204/fundo2_kf4wkm.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-white/70 to-white/30 backdrop-blur-[2px] z-0" />
-        <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-gray-800">
-            Energia Solar Residencial
-          </h1>
-          <div className="max-w-3xl mx-auto md:mx-0 space-y-6 text-gray-800 text-lg md:text-xl">
-            <div className="flex items-start">
-              <span className="inline-flex items-center justify-center w-10 h-10  text-white rounded-full mr-3 shadow-md">🏠</span>
-              <span>
-                Transforme sua casa em um modelo de <span className="font-semibold text-blue-800">sustentabilidade</span> e <span className="font-semibold text-blue-800">economia</span>.
-              </span>
-            </div>
-            <div className="flex items-start">
-              <span className="inline-flex items-center justify-center w-10 h-10  text-white rounded-full mr-3 shadow-md">⚡</span>
-              <span>
-                Soluções completas com tecnologia de ponta, instalação segura e suporte total — do projeto à manutenção.
-              </span>
-            </div>
-            <div className="flex items-start">
-              <span className="inline-flex items-center justify-center w-10 h-10  text-white rounded-full mr-3 shadow-md">🌿</span>
-              <span>
-                Economize até <span className="font-semibold text-green-700">95%</span> na sua conta de luz, valorize seu imóvel e contribua para um futuro mais verde.
-              </span>
-            </div>
-          </div>
-          <div className="mt-8">
-            <a
-              target="_blank"
-              href='https://api.whatsapp.com/send?phone=5534984214728&text=Oi%2C%20tudo%20bem%3F%20Gostaria%20de%20um%20or%C3%A7amento%20para%20instala%C3%A7%C3%A3o%20de%20energia%20solar%20na%20minha%20casa.%20Pode%20me%20ajudar%3F%20Obrigada!%20%F0%9F%8C%9E'
-              className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
-            >
-              ✉️ Solicitar Orçamento
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300" />
-            </a>
-          </div>
-        </div>
-      </section>
-
+    <div className="min-h-screen bg-gray-50 pt-5">
       {/* Projects Section */}
       <section
         ref={projectsRef}

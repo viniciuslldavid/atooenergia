@@ -86,19 +86,6 @@ const ServicosPage: React.FC = () => {
 
   const services = [
     {
-      icon: <Sun className="w-8 h-8 text-yellow-500" />,
-      title: 'Energia Solar',
-      description: 'Sistemas de energia solar fotovoltaica para residências, comércios e indústrias, reduzindo drasticamente os custos com eletricidade.',
-      benefits: [
-        'Redução imediata na conta de energia elétrica',
-        'Retorno do investimento em médio prazo',
-        'Valorização do imóvel',
-        'Tecnologia limpa com baixa manutenção',
-        'Garantia de 25 anos nos painéis solares'
-      ],
-      image: 'https://images.pexels.com/photos/159397/solar-panel-array-power-sun-electricity-159397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
       icon: <Home className="w-8 h-8 text-blue-500" />,
       title: 'Soluções Residenciais',
       description: 'Projetos personalizados para residências, melhorando a eficiência energética e reduzindo o consumo sem perder o conforto.',

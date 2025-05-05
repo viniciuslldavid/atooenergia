@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logopreta from '../assets/images/logo/logo.png';
+import logovisa from '../assets/images/logo/visa.png';
+import logomastercard from '../assets/images/logo/mastercard.png';
+import logoboleto from '../assets/images/logo/boleto.png';
+import logodinheiro from '../assets/images/logo/dinheiro.png';
+import logofinanciamento from '../assets/images/logo/financiamento.png';
+import logopix from '../assets/images/logo/pix.png';
 import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
+
+
 
 const Footer: React.FC = () => {
   return (
@@ -20,7 +28,93 @@ const Footer: React.FC = () => {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Transformando o futuro energético do Brasil com soluções inteligentes e sustentáveis para residências e empresas.
             </p>
-            <div className="flex space-x-4">
+            <div className="mt-4">
+              <h4 className="text-lg font-semibold mb-4">Formas de pagamento</h4>
+              <div className="flex flex-row items-center gap-4">
+                <div className="relative group">
+                  <img
+                    src={logovisa}
+                    alt="Visa"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Visa Débito
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logovisa}
+                    alt="Visa"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Visa Crédito
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logomastercard}
+                    alt="Mastercard"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Mastercard Débito
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logomastercard}
+                    alt="Mastercard"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Mastercard Crédito
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logoboleto}
+                    alt="Boleto"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Boleto
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logodinheiro}
+                    alt="Dinheiro"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Dinheiro
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logofinanciamento}
+                    alt="Financiamento"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Financiamento
+                  </span>
+                </div>
+                <div className="relative group">
+                  <img
+                    src={logopix}
+                    alt="Pix"
+                    className="w-8 h-auto hover:scale-105 transform transition-transform duration-200"
+                  />
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Pix
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex space-x-4 mt-4">
               <a
                 href="https://www.facebook.com/Ato-Energia-104205685677135/photos/?ref=page_internal"
                 className="bg-gray-800 hover:bg-blue-600 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-200"
@@ -142,7 +236,7 @@ const Footer: React.FC = () => {
 
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-gray-800 mt-5 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} ATO Energia. Todos os direitos reservados.

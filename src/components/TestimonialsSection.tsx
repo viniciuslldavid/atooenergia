@@ -18,7 +18,7 @@ const TestimonialsSection: React.FC = () => {
       name: 'Vinicius',
       role: 'Proprietário',
       company: 'ronaldao inestimentos',
-      content: 'eu sou foda.',
+      content: 'teste.',
       rating: 5,
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600'
     },

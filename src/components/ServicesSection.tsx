@@ -44,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         to={linkTo}
         className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
       >
-        Saiba mais
+        Veja nossos serviços.
         <ArrowUpRight
           size={16}
           className="ml-1 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"

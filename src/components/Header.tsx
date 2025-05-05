@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import logopreta from '../assets/images/logo/logo.png';
+import { Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,12 @@ const Header: React.FC = () => {
     { name: 'Serviços', path: '/servicos' },
     { name: 'Sobre Nós', path: '/sobre-nos' },
     { name: 'Contato', path: '/contato' },
+  ];
+
+  const socialLinks = [
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/your-profile' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/your-profile' },
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/your-profile' },
   ];
 
   return (
@@ -52,13 +59,27 @@ const Header: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <Link
-              to="/contato"
-              className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200"
-            >
-              <Phone size={16} />
-              <span>Fale Conosco</span>
-            </Link>
+            <div className="flex items-center space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="text-gray-700 hover:text-blue-500 transition duration-200"
+                >
+                  <social.icon size={20} />
+                </a>
+              ))}
+              <Link
+                to="/contato"
+                className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200"
+              >
+                <Phone size={16} />
+                <span>Fale Conosco</span>
+              </Link>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -96,6 +117,21 @@ const Header: React.FC = () => {
                   </Link>
                 </li>
               ))}
+              <li className="flex space-x-4 py-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="text-gray-700 hover:text-blue-500 transition duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <social.icon size={24} />
+                  </a>
+                ))}
+              </li>
               <li>
                 <Link
                   to="/contato"

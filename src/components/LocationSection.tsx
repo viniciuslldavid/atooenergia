@@ -35,7 +35,7 @@ const LocationSection = () => {
                 href="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d400.56998568955345!2d-48.25534390329891!3d-18.91484211343408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94a4450733d53147%3A0x9a08000dfd3859c3!2sAv.%20Belarmino%20Cotta%20Pacheco%2C%20411%20-%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038408-168!3m2!1d-18.9147064!2d-48.255041299999995!5e0!3m2!1spt-BR!2sbr!4v1746336208520!5m2!1spt-BR!2sbr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-3 bg-blue-900 text-white px-5 py-2 rounded-full font-medium tracking-wide shadow hover:bg-blue-800 hover:scale-105 transform transition duration-300"
+                className="inline-block mt-3 bg-blue-900 text-white px-5 py-2 rounded-full font-bold tracking-wide shadow hover:bg-blue-800 hover:scale-105 transform transition duration-300"
               >
                 COMO CHEGAR
               </a>

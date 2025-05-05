@@ -42,7 +42,6 @@ const CommissioningUsinasPage: React.FC = () => {
   const projectsSectionRef = useRef<HTMLDivElement>(null);
   const commissioningProjects = projects.filter(p => p.category === 'comissionamento');
 
-  // Apenas para projetos, se quiser
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -67,52 +66,7 @@ const CommissioningUsinasPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section (sempre visível, com fade-in) */}
-      <section
-        className="relative py-32 md:py-40 px-6 sm:px-10 bg-cover bg-center bg-no-repeat overflow-hidden animate-fade-in"
-        style={{
-          backgroundImage:
-            "url('https://res.cloudinary.com/dlthukrz8/image/upload/v1746328204/fundo2_kf4wkm.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-white/70 to-white/30 backdrop-blur-[2px] z-0" />
-        <div className="relative z-10 max-w-5xl mx-auto text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-gray-800">
-            Comissionamento de Usinas
-          </h1>
-          <div className="max-w-3xl mx-auto md:mx-0 space-y-6 text-gray-800 text-lg md:text-xl">
-            <p>
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white mr-3 shadow-md">
-                ⚙️
-              </span>
-              Garantimos que sua usina solar opere com{' '}
-              <span className="font-semibold text-blue-800">
-                máxima performance
-              </span>{' '}
-              desde o primeiro dia.
-            </p>
-            <p>
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full text-white mr-3 shadow-md">
-                🔍
-              </span>
-              Testes completos, validação de sensores, ajustes de inversores e
-              certificações rigorosas de segurança.
-            </p>
-            <p>
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full  text-white mr-3 shadow-md">
-                🏗️
-              </span>
-              Entregas dentro do prazo, conformidade com normas e suporte
-              técnico especializado.
-            </p>
-          </div>
-          <div className="mt-8">
-
-          </div>
-        </div>
-      </section>
-
+    <div className="min-h-screen bg-gray-50 pt-5">
       {/* Projects Section */}
       <section
         ref={projectsSectionRef}
