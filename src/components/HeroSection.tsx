@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Zap, BarChart2, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import fundo1 from '../assets/images/background/fundo1.png';
-import fundo2 from '../assets/images/background/fundo2.png';
 
-const backgroundImages = [fundo1, fundo2];
+
+const backgroundImages = ['https://res.cloudinary.com/dlthukrz8/image/upload/v1746617440/fundo1_nbqsuq.webp', 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746617441/fundo2_csbmru.webp'];
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
