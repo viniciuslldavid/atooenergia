@@ -3,7 +3,7 @@ import { ArrowRight, Zap, BarChart2, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
-const backgroundImages = ['https://res.cloudinary.com/dlthukrz8/image/upload/v1746617440/fundo1_nbqsuq.webp', 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746617441/fundo2_csbmru.webp'];
+const backgroundImages = ['https://res.cloudinary.com/dlthukrz8/image/upload/v1746617440/fundo1_nbqsuq.webp', 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746617441/fundo2_csbmru.webp', 'https://res.cloudinary.com/duzbjndww/image/upload/v1751983304/IMG_20201031_174653-_2__1_lla3uk.webp'];
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -45,8 +45,7 @@ const HeroSection: React.FC = () => {
               Transformando o <span className="text-blue-300">futuro energético</span> do Brasil
             </h1>
             <p className="text-xl leading-relaxed max-w-xl drop-shadow-md">
-              Soluções energéticas inteligentes e sustentáveis para residências e empresas. 
-              Economize até 30% nos seus custos com energia.
+              Soluções energéticas inteligentes e sustentáveis para residências e empresas. Reduza seus custos com energia.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
@@ -69,7 +68,7 @@ const HeroSection: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/20">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: <Zap className="h-8 w-8 text-yellow-400" />, title: "Economia", description: "Reduza sua conta de energia em até 30%" },
+                  { icon: <Zap className="h-8 w-8 text-yellow-400" />, title: "Economia", description: "Reduza sua conta de energia." },
                   { icon: <BarChart2 className="h-8 w-8 text-green-400" />, title: "Sustentabilidade", description: "Energia limpa e renovável para o planeta" },
                   { icon: <DollarSign className="h-8 w-8 text-blue-400" />, title: "Investimento", description: "Retorno garantido em médio prazo" },
                   { icon: <ArrowRight className="h-8 w-8 text-purple-400" />, title: "Futuro", description: "Tecnologia de ponta para sua energia" }
