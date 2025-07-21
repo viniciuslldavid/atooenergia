@@ -3,22 +3,21 @@ import { FaInstagram, FaHeart, FaRegComment } from 'react-icons/fa';
 const InstagramSection = () => {
   const instagramPosts = [
     {
-      image: 'https://scontent.cdnsnapwidget.com/v/t51.71878-15/468572695_2921099301400051_5489167687277998555_n.jpg',
-      link: 'https://www.instagram.com/ato.energia',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1753107182/517565624_733492789441282_722328339883343156_n_kmixz1.jpg',
       date: 'Nov 28, 2024',
-      caption: '',
+      caption: 'Tem gente economizando mais de R$700 por mês com energia solar. Já pensou o que dá pra fazer com isso? Foi o caso do Fábio, do...',
     },
     {
-      image: 'https://scontent.cdnsnapwidget.com/v/t51.71878-15/468231796_1349930043044432_2700269342921905811_n.jpg',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1753107182/Voc%C3%AA_sabia_que_d%C3%A1_pra_acompanhar_a_gera%C3%A7%C3%A3o_de_energia_solar_direto_do_celular_E_o_melhor-_sem_fidhe5.jpg',
       link: 'https://www.instagram.com/ato.energia',
       date: 'Nov 26, 2024',
-      caption: '',
+      caption: '📱 Você sabia que dá pra acompanhar a geração de energia solar direto do celular? E o melhor: sem pagar nada a mais por isso...',
     },
     {
-      image: 'https://scontent.cdnsnapwidget.com/v/t51.75761-15/467837742_17967117038807541_158311600544659219_n.jpg',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1753107182/Ato._significa_a%C3%A7%C3%A3o_trabalho_e_otimismo.Nossa_empresa_representa_atitude_comprometimento_movi_dwqqcn.jpg',
       link: 'https://www.instagram.com/ato.energia',
       date: 'Nov 21, 2024',
-      caption: 'Faltam 2 dias para a Black Friday!',
+      caption: 'Ato. significa ação, trabalho e otimismo. Nossa empresa representa atitude, comprometimento, movimento e ENERGIA ⚡... ',
     },
   ];
 
