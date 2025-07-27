@@ -26,76 +26,74 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="fixed w-full z-50 bg-white shadow-md py-2 transition-all duration-300">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
-          <Link
-            to="/"
-            className="flex items-center space-x-2"
-            aria-label="ATO Energia - Página inicial"
-          >
-            <img
-              src={logopreta}
-              alt="Logo ATO Energia"
-              className="h-16 md:h-20 w-auto drop-shadow-lg"
-            />
-          </Link>
+    <>
+      <header className="fixed w-full z-50 bg-white shadow-md py-2 transition-all duration-300">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex justify-between items-center">
+            <Link
+              to="/"
+              className="flex items-center space-x-2"
+              aria-label="ATO Energia - Página inicial"
+            >
+              <img
+                src={logopreta}
+                alt="Logo ATO Energia"
+                className="h-16 md:h-20 w-auto drop-shadow-lg"
+              />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <ul className="flex space-x-6">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className={`text-base font-medium hover:text-blue-500 transition duration-200 ${
-                      location.pathname === link.path
-                        ? 'text-blue-600'
-                        : 'text-gray-700'
-                    }`}
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <ul className="flex space-x-6">
+                {navLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className={`text-base font-medium hover:text-blue-500 transition duration-200 ${location.pathname === link.path ? 'text-blue-600' : 'text-gray-700'}`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center space-x-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="text-gray-700 hover:text-blue-500 transition duration-200"
                   >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.name}
-                  className="text-gray-700 hover:text-blue-500 transition duration-200"
+                    <social.icon size={20} />
+                  </a>
+                ))}
+                <Link
+                  to="/contato"
+                  className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200"
                 >
-                  <social.icon size={20} />
-                </a>
-              ))}
-              <Link
-                to="/contato"
-                className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200"
-              >
-                <Phone size={16} />
-                <span>Fale Conosco</span>
-              </Link>
-            </div>
-          </nav>
+                  <Phone size={16} />
+                  <span>Fale Conosco</span>
+                </Link>
+              </div>
+            </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden focus:outline-none"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-          >
-            {isMenuOpen ? (
-              <X size={28} className="text-gray-800" />
-            ) : (
-              <Menu size={28} className="text-gray-800" />
-            )}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden focus:outline-none"
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            >
+              {isMenuOpen ? (
+                <X size={28} className="text-gray-800" />
+              ) : (
+                <Menu size={28} className="text-gray-800" />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
@@ -106,11 +104,7 @@ const Header: React.FC = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className={`block py-2 text-lg ${
-                      location.pathname === link.path
-                        ? 'text-blue-600 font-medium'
-                        : 'text-gray-700'
-                    }`}
+                    className={`block py-2 text-lg ${location.pathname === link.path ? 'text-blue-600 font-medium' : 'text-gray-700'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -145,7 +139,12 @@ const Header: React.FC = () => {
           </div>
         </div>
       )}
-    </header>
+
+      {/* Conteúdo abaixo da navbar */}
+      <div className="mt-[80px]"> {/* Adicionando margem superior ao conteúdo */}
+        {/* Aqui vai o seu conteúdo principal */}
+      </div>
+    </>
   );
 };
 

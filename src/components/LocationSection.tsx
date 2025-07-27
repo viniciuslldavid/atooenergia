@@ -1,21 +1,34 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 const LocationSection = () => {
   return (
-    <section className="py-20 bg-white font-sans">
+    <section className="py-20 bg-white font-sans mt-32"> {/* Adicionado mt-32 (128px) para evitar sobreposição com a navbar */}
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-20">
-        {/* Mapa do Google */}
-        <div className="w-full max-w-xl h-[400px] rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-          <iframe
-            title="Localização Ato Energia"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.578170010917!2d-48.25724292412926!3d-18.914728807960934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a4456e39ec5f8d%3A0x6aa61cc0b2e41461!2sAv.%20Belarmino%20Cotta%20Pacheco%2C%20411%20-%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038408-168!5e0!3m2!1spt-BR!2sbr!4v1714821160736!5m2!1spt-BR!2sbr"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        {/* Mapa interativo com Leaflet */}
+        <div className="w-full max-w-xl h-[400px] rounded-2xl overflow-hidden shadow-xl border border-gray-100 relative z-0"> {/* Adicionado z-0 para garantir que o mapa fique abaixo da navbar */}
+          <MapContainer 
+            center={[-18.914703020661538, -48.255042883048176]} 
+            zoom={18} 
+            style={{ height: "100%", width: "100%", zIndex: 0 }} // Adicionado zIndex: 0 no estilo do MapContainer
+          >
+            {/* TileLayer define o estilo do mapa (ex: OpenStreetMap) */}
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {/* Marcador para a localização da empresa */}
+            <Marker
+              position={[-18.914703020661538, -48.255042883048176]}
+            >
+              <Popup>
+                Ato Energia <br />
+                Av. Belarmino Cotta Pacheco, 411 <br />
+                Santa Mônica, Uberlândia - MG <br />
+                38408-168
+              </Popup>
+            </Marker>
+          </MapContainer>
         </div>
 
         {/* Informações */}
@@ -32,7 +45,7 @@ const LocationSection = () => {
                 38408-168
               </p>
               <a
-                href="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d400.56998568955345!2d-48.25534390329891!3d-18.91484211343408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94a4450733d53147%3A0x9a08000dfd3859c3!2sAv.%20Belarmino%20Cotta%20Pacheco%2C%20411%20-%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038408-168!3m2!1d-18.9147064!2d-48.255041299999995!5e0!3m2!1spt-BR!2sbr!4v1746336208520!5m2!1spt-BR!2sbr"
+                href="https://www.google.com/maps?q=-18.914703020661538,-48.255042883048176"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-3 bg-blue-900 text-white px-5 py-2 rounded-full font-bold tracking-wide shadow hover:bg-blue-800 hover:scale-105 transform transition duration-300"

@@ -12,6 +12,7 @@ import LocationSection from '../components/LocationSection';
 import FABExpand from '../components/FABExpand';
 
 
+
 const HomePage: React.FC = () => {
   useEffect(() => {
     document.title = 'ATO Energia - Soluções Energéticas para o Brasil';
@@ -49,6 +50,7 @@ const HomePage: React.FC = () => {
       <FinancingSection />
       <WorkingHours />
       <LocationSection />
+
       <ContactSection />
       <FABExpand/>
     </div>

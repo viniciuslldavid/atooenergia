@@ -5,6 +5,7 @@ import StatsSection from '../components/StatsSection';
 import CTASection from '../components/CTASection';
 import wesley from '../assets/images/equipe/wesley.png';
 import joaoluiz from '../assets/images/equipe/joaoluiz.png';
+import LocationsMapSection from '../components/LocationsMapSection';
 
 const SobreNosPage: React.FC = () => {
   useEffect(() => {
@@ -46,13 +47,12 @@ const SobreNosPage: React.FC = () => {
       image: joaoluiz,
       description: 'experiência (vou colocar ainda)'
     },
-
   ];
 
   return (
     <div>
       {/* Hero */}
-      <div className="pt-32 pb-16 bg-gray-50">
+      <div className="pt-20 pb-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -75,7 +75,7 @@ const SobreNosPage: React.FC = () => {
       </div>
 
       {/* Nossa História */}
-      <div className="py-20">
+      <div className="py-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll opacity-0">
@@ -123,12 +123,12 @@ const SobreNosPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Missão, Visão e Valores */}
+      {/* Missão e Visão */}
       <div className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll opacity-0">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Missão, Visão e Valores
+              Missão e Visão
             </h2>
             <div className="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600">
@@ -136,14 +136,17 @@ const SobreNosPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-md p-8 animate-on-scroll opacity-0 transition-all duration-700 ease-out">
               <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Clock className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Missão</h3>
               <p className="text-gray-600">
-                Transformar a relação das pessoas com a energia, oferecendo soluções sustentáveis que reduzem custos e impactos ambientais, contribuindo para um futuro mais limpo e acessível.
+                <strong className="text-blue-600">Comprometimento e inovação</strong> Nosso compromisso é compreender, atender e superar suas necessidades, construindo relações duradouras baseadas em confiança e excelência. <br /><br />
+                <strong className="text-blue-600">Profissionais capacitados</strong> Especialistas dedicados ao aprendizado contínuo, resolvendo problemas criativamente e garantindo resultados de alta qualidade. <br /><br />
+                <strong className="text-blue-600">Qualidade</strong> Superamos expectativas com padrões de excelência, oferecendo produtos e serviços confiáveis para fortalecer nossa reputação. <br /><br />
+                <strong className="text-blue-600">Satisfação do cliente</strong> Prioridade máxima, com soluções personalizadas e processos ajustados às suas necessidades.
               </p>
             </div>
 
@@ -153,38 +156,15 @@ const SobreNosPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Visão</h3>
               <p className="text-gray-600">
-                Ser reconhecida como a empresa de referência em soluções energéticas no Brasil, liderando a transição para um modelo energético mais sustentável e eficiente em todo o país.
+                Se tornar uma empresa referência no mercado solar no Brasil no que se trata de qualidade de usinas fotovoltaicas. Buscamos ser reconhecidos como referência na qualificação de usinas fotovoltaicas, impulsionando o setor no nosso país. Nossa meta é ampliar nossa presença no setor, aprimorar constantemente nossa tecnologia e estabelecer parcerias estratégicas que nos permitam alcançar um futuro onde a energia limpa e renovável seja uma realidade para todos.
               </p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md p-8 animate-on-scroll opacity-0 transition-all duration-700 ease-out" style={{ transitionDelay: '400ms' }}>
-              <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Users className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Valores</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0 mt-0.5" />
-                  <span>Sustentabilidade em todas as ações</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0 mt-0.5" />
-                  <span>Inovação constante</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0 mt-0.5" />
-                  <span>Excelência no atendimento</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0 mt-0.5" />
-                  <span>Transparência e ética</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
-
+      <div>
+        <LocationsMapSection />
+      </div>
       {/* Equipe */}
       <div className="py-20">
         <div className="container mx-auto px-4">
