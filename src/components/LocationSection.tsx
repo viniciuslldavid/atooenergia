@@ -48,7 +48,7 @@ const LocationSection = () => {
                 href="https://www.google.com/maps?q=-18.914703020661538,-48.255042883048176"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-3 bg-blue-900 text-white px-5 py-2 rounded-full font-bold tracking-wide shadow hover:bg-blue-800 hover:scale-105 transform transition duration-300"
+                className="inline-block mt-3 bg-blue-600 text-white px-5 py-2 rounded-full font-bold tracking-wide shadow hover:bg-blue-800 hover:scale-105 transform transition duration-300"
               >
                 COMO CHEGAR
               </a>

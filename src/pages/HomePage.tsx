@@ -5,7 +5,7 @@ import StatsSection from '../components/StatsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
 import InstagramSection from '../components/InstagramSection.tsx';
-import FinancingSection from '../components/FinancingSection';
+import SolarSimulator from '../components/SolarSimulator.tsx';
 import { WorkingHours } from '../components/WorkingHours';
 import WhatsappSection from '../components/WhatsappSection';
 import LocationSection from '../components/LocationSection';
@@ -44,13 +44,11 @@ const HomePage: React.FC = () => {
       <HeroSection />
       <ServicesSection />
       <StatsSection />
-      <WhatsappSection />
       <TestimonialsSection />
       <InstagramSection />
-      <FinancingSection />
+      <SolarSimulator />
       <WorkingHours />
       <LocationSection />
-
       <ContactSection />
       <FABExpand/>
     </div>
