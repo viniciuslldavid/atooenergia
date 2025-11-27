@@ -10,6 +10,7 @@ interface SolarKit {
   panels: number;
   power: string;
   price: number;
+  financedPrice: number;  // This is the "Financiado" price
   image: string;
   description: string;
 }
@@ -18,13 +19,14 @@ const solarKits: SolarKit[] = [
   {
     id: 1,
     name: 'Kit Solar Residencial Básico',
-    minConsumption: 100,
+    minConsumption: 1,
     maxConsumption: 200,
     microInverters: 1,
     panels: 4,
     power: '1,6 kWp',
-    price: 8500,
-    image: 'https://images.pexels.com/photos/9875432/pexels-photo-9875432.jpeg?auto=compress&cs=tinysrgb&w=800',
+    price: 8154.50,
+    financedPrice: 7372.30,
+    image: '',
     description: 'Ideal para casas pequenas com baixo consumo'
   },
   {
@@ -35,8 +37,9 @@ const solarKits: SolarKit[] = [
     microInverters: 2,
     panels: 8,
     power: '3,2 kWp',
-    price: 15800,
-    image: 'https://images.pexels.com/photos/9875454/pexels-photo-9875454.jpeg?auto=compress&cs=tinysrgb&w=800',
+    price: 9267.92,
+    financedPrice: 8378.92,
+    image: '',
     description: 'Perfeito para residências de médio porte'
   },
   {
@@ -47,8 +50,9 @@ const solarKits: SolarKit[] = [
     microInverters: 3,
     panels: 12,
     power: '4,8 kWp',
-    price: 22500,
-    image: 'https://images.pexels.com/photos/9875463/pexels-photo-9875463.jpeg?auto=compress&cs=tinysrgb&w=800',
+    price: 12620.82,
+    financedPrice: 11410.20,
+    image: '',
     description: 'Ideal para casas grandes ou pequenos comércios'
   },
   {
@@ -59,8 +63,9 @@ const solarKits: SolarKit[] = [
     microInverters: 4,
     panels: 16,
     power: '6,4 kWp',
-    price: 32000,
-    image: 'https://images.pexels.com/photos/9875467/pexels-photo-9875467.jpeg?auto=compress&cs=tinysrgb&w=800',
+    price: 14888.50,
+    financedPrice: 13460.35,
+    image: '',
     description: 'Adequado para estabelecimentos comerciais'
   },
   {
@@ -69,31 +74,214 @@ const solarKits: SolarKit[] = [
     minConsumption: 800,
     maxConsumption: 1200,
     microInverters: 6,
-    panels: 24,
-    power: '9,6 kWp',
-    price: 45000,
-    image: 'https://images.pexels.com/photos/9875471/pexels-photo-9875471.jpeg?auto=compress&cs=tinysrgb&w=800',
+    panels: 20,
+    power: '8 kWp',
+    price: 16437.80,
+    financedPrice: 15041.86,
+    image: '',
     description: 'Para indústrias e grandes consumidores'
+  },
+  {
+    id: 6,
+    name: 'Kit Solar Residencial Extra Grande',
+    minConsumption: 1200,
+    maxConsumption: 1500,
+    microInverters: 6,
+    panels: 22,
+    power: '10,4 kWp',
+    price: 19405.16,
+    financedPrice: 17543.76,
+    image: '',
+    description: 'Para residências muito grandes ou com alto consumo'
+  },
+  {
+    id: 7,
+    name: 'Kit Solar Empresarial',
+    minConsumption: 1500,
+    maxConsumption: 2000,
+    microInverters: 7,
+    panels: 24,
+    power: '12 kWp',
+    price: 21705.06,
+    financedPrice: 19623.06,
+    image: '',
+    description: 'Ideal para empresas de pequeno porte'
+  },
+  {
+    id: 8,
+    name: 'Kit Solar Comercial Plus',
+    minConsumption: 2000,
+    maxConsumption: 2500,
+    microInverters: 7,
+    panels: 28,
+    power: '14 kWp',
+    price: 21857.47,
+    financedPrice: 19760.84,
+    image: '',
+    description: 'Para grandes estabelecimentos comerciais'
+  },
+  {
+    id: 9,
+    name: 'Kit Solar Industrial Plus',
+    minConsumption: 2500,
+    maxConsumption: 3000,
+    microInverters: 8,
+    panels: 30,
+    power: '16 kWp',
+    price: 24518.71,
+    financedPrice: 22166.81,
+    image: '',
+    description: 'Para grandes indústrias'
+  },
+  {
+    id: 10,
+    name: 'Kit Solar Comercial Extra',
+    minConsumption: 3000,
+    maxConsumption: 3500,
+    microInverters: 8,
+    panels: 32,
+    power: '18 kWp',
+    price: 26572.45,
+    financedPrice: 24023.55,
+    image: '',
+    description: 'Para comércios de grande porte ou áreas de grande consumo'
+  },
+  {
+    id: 11,
+    name: 'Kit Solar Residencial Ultra Grande',
+    minConsumption: 3500,
+    maxConsumption: 4000,
+    microInverters: 9,
+    panels: 34,
+    power: '20 kWp',
+    price: 28924.76,
+    financedPrice: 26240.63,
+    image: '',
+    description: 'Para residências ultra grandes com altíssimo consumo'
+  },
+  {
+    id: 12,
+    name: 'Kit Solar Empresarial Ultra',
+    minConsumption: 4000,
+    maxConsumption: 4500,
+    microInverters: 9,
+    panels: 36,
+    power: '22,4 kWp',
+    price: 33799.27,
+    financedPrice: 30902.24,
+    image: '',
+    description: 'Para empresas de grande porte com altíssimo consumo'
+  },
+  {
+    id: 13,
+    name: 'Kit Solar Comercial Plus Ultra',
+    minConsumption: 4500,
+    maxConsumption: 5000,
+    microInverters: 10,
+    panels: 40,
+    power: '24 kWp',
+    price: 36192.73,
+    financedPrice: 32721.02,
+    image: '',
+    description: 'Para grandes redes comerciais ou indústria de grande porte'
+  },
+  {
+    id: 14,
+    name: 'Kit Solar Industrial Ultra',
+    minConsumption: 5000,
+    maxConsumption: 5500,
+    microInverters: 10,
+    panels: 42,
+    power: '26,4 kWp',
+    price: 40843.12,
+    financedPrice: 36925.34,
+    image: '',
+    description: 'Para grandes fábricas ou indústrias com consumo altíssimo'
+  },
+  {
+    id: 15,
+    name: 'Kit Solar Ultra Comercial',
+    minConsumption: 5500,
+    maxConsumption: 6000,
+    microInverters: 11,
+    panels: 44,
+    power: '28,8 kWp',
+    price: 45095.88,
+    financedPrice: 41032.02,
+    image: '',
+    description: 'Para comércios e indústrias gigantes'
+  },
+  {
+    id: 16,
+    name: 'Kit Solar Mega Comercial',
+    minConsumption: 6000,
+    maxConsumption: 6500,
+    microInverters: 11,
+    panels: 46,
+    power: '31,2 kWp',
+    price: 48715.48,
+    financedPrice: 44132.97,
+    image: '',
+    description: 'Ideal para grandes indústrias com consumo superior'
+  },
+  {
+    id: 17,
+    name: 'Kit Solar Comercial Gigante',
+    minConsumption: 6500,
+    maxConsumption: 7000,
+    microInverters: 12,
+    panels: 48,
+    power: '33,6 kWp',
+    price: 52281.81,
+    financedPrice: 48173.52,
+    image: '',
+    description: 'Para indústrias de consumo massivo de energia'
+  },
+  {
+    id: 18,
+    name: 'Kit Solar Industrial Gigante',
+    minConsumption: 7000,
+    maxConsumption: 7500,
+    microInverters: 12,
+    panels: 50,
+    power: '36 kWp',
+    price: 56192.96,
+    financedPrice: 51518.80,
+    image: '',
+    description: 'Para grandes indústrias ou grandes parques comerciais'
+  },
+  {
+    id: 19,
+    name: 'Kit Solar Plus',
+    minConsumption: 7500,
+    maxConsumption: 8000,
+    microInverters: 13,
+    panels: 52,
+    power: '38,4 kWp',
+    price: 59226.02,
+    financedPrice: 54001.92,
+    image: '',
+    description: 'Para consumidores comerciais muito grandes'
   }
 ];
 
+
 const SolarSimulator = () => {
-  const [consumption, setConsumption] = useState<string>('');
+  const [generation, setGeneration] = useState<string>(''); // User's input for Geração
   const [recommendedKit, setRecommendedKit] = useState<SolarKit | null>(null);
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    if (consumption) {
-      const consumptionValue = parseInt(consumption);
+    if (generation) {
+      const generationValue = parseInt(generation);
       const kit = solarKits.find(
-        kit => consumptionValue >= kit.minConsumption && consumptionValue <= kit.maxConsumption
+        kit => generationValue >= kit.minConsumption && generationValue <= kit.maxConsumption
       );
-      
+
       if (kit) {
         setRecommendedKit(kit);
         setShowResult(true);
-      } else if (consumptionValue > 1200) {
-        // Para consumos muito altos, mostrar o kit maior
+      } else if (generationValue > 1200) {
         setRecommendedKit(solarKits[solarKits.length - 1]);
         setShowResult(true);
       } else {
@@ -104,7 +292,7 @@ const SolarSimulator = () => {
       setShowResult(false);
       setRecommendedKit(null);
     }
-  }, [consumption]);
+  }, [generation]);
 
   const formatPrice = (price: number) => {
     return price.toLocaleString('pt-BR', {
@@ -114,13 +302,12 @@ const SolarSimulator = () => {
   };
 
   const calculateMonthlyPayment = (totalPrice: number) => {
-    // Simulação de parcela em 60 meses com juros
-    const monthlyPayment = totalPrice * 0.025;
+    const monthlyPayment = totalPrice * 0.025; // Simulating payment over 60 months with a 2.5% monthly rate
     return formatPrice(monthlyPayment);
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -147,8 +334,8 @@ const SolarSimulator = () => {
                 <div className="relative">
                   <input
                     type="number"
-                    value={consumption}
-                    onChange={(e) => setConsumption(e.target.value)}
+                    value={generation}
+                    onChange={(e) => setGeneration(e.target.value)}
                     placeholder="Ex: 250"
                     className="w-full px-6 py-4 text-2xl font-bold text-center border-2 border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none transition duration-300"
                   />
@@ -211,20 +398,20 @@ const SolarSimulator = () => {
                       <div className="text-center">
                         <div className="text-sm text-gray-600 mb-1">Investimento Total</div>
                         <div className="text-3xl font-bold text-green-600 mb-2">
-                          {formatPrice(recommendedKit.price)}
+                          {formatPrice(recommendedKit.financedPrice)}
                         </div>
                         <div className="text-sm text-gray-600">
-                          ou {calculateMonthlyPayment(recommendedKit.price)}/mês
+                          ou {calculateMonthlyPayment(recommendedKit.financedPrice)}/mês
                         </div>
                       </div>
                     </div>
 
                     {/* Call to Action */}
                     <a
-                      href={`https://api.whatsapp.com/send?phone=5534984214728&text=Olá! Gostaria de mais informações sobre o ${recommendedKit.name} para um consumo de ${consumption}kWh. Valor: ${formatPrice(recommendedKit.price)}`}
+                      href={`https://api.whatsapp.com/send?phone=5534984214728&text=Olá! Gostaria de mais informações sobre o ${recommendedKit.name} para um consumo de ${generation}kWh. Valor: ${formatPrice(recommendedKit.financedPrice)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-4 px-10 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 w-full"
+                      className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-gradient-to-r from-[#fcec04] to-[#fcec04] hover:from-[#fcec04] hover:to-[#fcec04] text-[#040c6c]"
                     >
                       Solicitar Orçamento
                     </a>

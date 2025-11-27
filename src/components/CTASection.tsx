@@ -1,47 +1,47 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Zap, ArrowRight, Leaf } from 'lucide-react';
 
-interface CTASectionProps {
-  title: string;
-  buttonText: string;
-  buttonLink: string;
-}
 
-const CTASection: React.FC<CTASectionProps> = ({ title, buttonText, buttonLink }) => {
-  return (
-    <div className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-white blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-white blur-3xl"></div>
-      </div>
+<div className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <Leaf className="w-8 h-8 text-yellow-400" />
+                <span className="text-yellow-400 font-bold text-sm uppercase tracking-wide">Transformação Sustentável</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                Pronto para Começar sua Jornada Solar?
+              </h2>
+              <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                Nossos especialistas estão prontos para analisar sua situação e criar uma solução personalizada com máximo potencial de economia e sustentabilidade.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/contato"
+                  className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                >
+                  Solicitar Orçamento
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/30"
+                >
+                  Voltar ao Início
+                </Link>
+              </div>
+            </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{title}</h2>
-          <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-            Economize até 30% em sua conta de energia elétrica e contribua para um mundo mais sustentável com nossas soluções.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link
-              to={buttonLink}
-              className="inline-flex items-center justify-center bg-white text-blue-700 hover:bg-blue-50 py-3 px-8 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl group"
-            >
-              {buttonText}
-              <ArrowRight size={18} className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
-
+            <div className="hidden md:flex justify-center">
+              <div className="relative w-64 h-64">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-blue-400/20 rounded-3xl transform rotate-45"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Zap className="w-32 h-32 text-yellow-300 opacity-30 animate-pulse" />
+                </div>
+              </div>
+            </div>
           </div>
-
-          <p className="text-blue-200 mt-8 text-sm">
-            Mais de 100 clientes já economizam com a ATO Energia!
-          </p>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default CTASection;

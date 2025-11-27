@@ -212,7 +212,7 @@ const ContactSection: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+                    className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-gradient-to-r from-[#fcec04] to-[#fcec04] hover:from-[#fcec04] hover:to-[#fcec04] text-[#040c6c]"
                   >
                     Enviar Mensagem
                     <Send className="ml-2 h-5 w-5" />

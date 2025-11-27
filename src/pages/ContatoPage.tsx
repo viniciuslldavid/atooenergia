@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import ContactSection from '../components/ContactSection';
+import CTASection from '../components/CTASection';
 
 const ContatoPage: React.FC = () => {
   useEffect(() => {
@@ -62,7 +63,9 @@ const ContatoPage: React.FC = () => {
       </div>
 
       <ContactSection />
+ 
     </div>
+    
   );
 };
 

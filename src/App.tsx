@@ -11,6 +11,7 @@ import CommissioningUsinasPage from './pages/CommissioningUsinasPage';
 import MaintenanceServicePage from './pages/MaintenanceServicePage'; 
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
 import ScrollToTop from './components/ScrollToTop';
+import CommercialInstallationsPage from './pages/ComercialInstallationsPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/servicos" element={<ServicosPage />} />
             <Route path="/contato" element={<ContatoPage />} />
             <Route path="/servicos/residencial" element={<ResidentialInstallationsPage />} />
+            <Route path="/servicos/comercial" element={<CommercialInstallationsPage/>} />
             <Route path="/servicos/comissionamentousinas" element={<CommissioningUsinasPage />} />
             <Route path="/servicos/maintenanceservicePage" element={<MaintenanceServicePage />} />
             <Route path="/projetos/:slug" element={<ProjectDetailsPage />} />

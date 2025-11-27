@@ -1,224 +1,88 @@
-import React, { useEffect, useRef } from 'react';
-import { Home, Building2, ArrowUpRight, Gauge, Droplet } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { projects } from '../data/projects.ts'; // Importando os dados de projects.ts
+import { Home, Building2, Sprout, Zap, ArrowRight } from 'lucide-react';
 
-interface ServiceExample {
-  title: string;
-  imageUrl: string;
-  linkTo: string;
-}
-
-interface ServiceItemProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  imageUrl: string;
-  linkTo: string;
-  examples: ServiceExample[];
-}
-
-interface ServiceCardProps {
-  service: ServiceItemProps;
-  delay: number;
-}
-
-export const ServiceCard: React.FC<ServiceCardProps> = ({ service, delay }) => {
-  return (
-    <div
-      className="w-full bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 p-8 group animate-on-scroll opacity-0 mb-8"
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className="flex flex-col lg:flex-row gap-8 items-center">
-        {/* Main Service Image */}
-        <div className="lg:w-1/3">
-          <img
-            src={service.imageUrl}
-            alt={service.title}
-            className="w-full h-72 lg:h-64 rounded-2xl object-cover shadow-lg"
-          />
-        </div>
-
-        {/* Service Content */}
-        <div className="lg:w-2/3 flex flex-col">
-          <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
-            {service.icon}
-          </div>
-          <h3 className="text-3xl font-bold text-gray-800 mb-2">{service.title}</h3>
-          <p className="text-gray-600 text-lg mb-6 leading-relaxed flex-1">{service.description}</p>
-
-          {/* Service Examples */}
-          <div className="mb-6">
-            <h4 className="text-xl font-semibold text-gray-800 mb-4">Exemplos de Projetos Realizados:</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {service.examples.map((example, index) => (
-                <Link
-                  key={index}
-                  to={example.linkTo}
-                  className="group/example relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  <img
-                    src={example.imageUrl}
-                    alt={example.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover/example:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover/example:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-2 group-hover/example:translate-y-0 transition-transform duration-300">
-                    <h5 className="font-semibold text-lg">{example.title}</h5>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Main Service Link */}
-          <Link
-            to={service.linkTo}
-            className="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-blue-800 transition-colors w-fit group-hover:translate-x-2 transition-transform duration-300"
-          >
-            Ver Todos os Serviços
-            <ArrowUpRight
-              size={20}
-              className="ml-2 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Substituindo os dados de exemplo com os dados do arquivo projects.ts
-export const services: ServiceItemProps[] = [
+const services = [
   {
-    icon: <Home className="w-10 h-10 text-blue-500" />,
+    icon: <Home className="w-8 h-8" />,
     title: 'Residencial',
-    description:
-      'Soluções personalizadas para reduzir o consumo e otimizar a eficiência energética da sua casa. Sistemas solares fotovoltaicos dimensionados especificamente para o seu perfil de consumo, com tecnologia de ponta e garantia de performance.',
-    imageUrl: 'https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=800',
-    linkTo: '/servicos/residencial',
-    examples: projects
-      .filter(project => project.category === 'residencial') // Filtra pela categoria 'residencial'
-      .filter(project => project.id === 1 || project.id === 2) // Filtra pelos IDs específicos
-      .map(project => ({
-        title: project.title,
-        imageUrl: project.imageUrl,
-        linkTo: `/projetos/${project.slug}`,
-      }))
+    description: 'Economia e sustentabilidade para sua casa',
+    gradient: 'from-orange-400 to-orange-600'
   },
   {
-    icon: <Building2 className="w-10 h-10 text-green-500" />,
+    icon: <Building2 className="w-8 h-8" />,
     title: 'Comercial',
-    description:
-      'Reduza seus custos operacionais e aumente a competitividade do seu negócio com nossas soluções energéticas. Projetos escaláveis para empresas de todos os portes, com sistemas de monitoramento avançado e máximo retorno sobre investimento.',
-    imageUrl: 'https://images.pexels.com/photos/9875365/pexels-photo-9875365.jpeg?auto=compress&cs=tinysrgb&w=800',
-    linkTo: '/servicos/comercial',
-    examples: projects
-      .filter(project => project.category === 'comercial') // Filtra pela categoria 'comercial'
-      .filter(project => project.id === 3 || project.id === 4) // Filtra pelos IDs específicos
-      .map(project => ({
-        title: project.title,
-        imageUrl: project.imageUrl,
-        linkTo: `/projetos/${project.slug}`,
-      }))
+    description: 'Reduza custos operacionais do seu negócio',
+    gradient: 'from-blue-400 to-blue-600'
   },
   {
-    icon: <Gauge className="w-10 h-10 text-purple-500" />,
-    title: 'Comissionamento de Usinas',
-    description:
-      'Realizamos testes e calibrações técnicas para garantir que sua usina solar opere com segurança, eficiência e dentro dos parâmetros projetados. Certificação completa do sistema com relatórios detalhados de performance e conformidade técnica.',
-    imageUrl: 'https://images.pexels.com/photos/9875440/pexels-photo-9875440.jpeg?auto=compress&cs=tinysrgb&w=800',
-    linkTo: '/servicos/comissionamentousinas',
-    examples: projects
-      .filter(project => project.category === 'comissionamento') // Filtra pela categoria 'comissionamento'
-      .filter(project => project.id === 5 || project.id === 6) // Filtra pelos IDs específicos
-      .map(project => ({
-        title: project.title,
-        imageUrl: project.imageUrl,
-        linkTo: `/projetos/${project.slug}`,
-      }))
+    icon: <Sprout className="w-8 h-8" />,
+    title: 'Agro',
+    description: 'Soluções para o agronegócio',
+    gradient: 'from-green-400 to-green-600'
   },
   {
-    icon: <Droplet className="w-10 h-10 text-cyan-500" />,
-    title: 'Limpeza e Manutenção',
-    description:
-      'Serviços especializados de limpeza e manutenção preventiva para garantir a performance ideal dos sistemas solares. Mantenha sua eficiência energética sempre no máximo com nossa equipe técnica especializada e equipamentos de última geração.',
-    imageUrl: 'https://images.pexels.com/photos/9875364/pexels-photo-9875364.jpeg?auto=compress&cs=tinysrgb&w=800',
-    linkTo: '/servicos/maintenanceservicePage',
-    examples: projects
-      .filter(project => project.category === 'limpezaemanutencao') // Filtra pela categoria 'limpezaemanutencao'
-      .filter(project => project.id === 7 || project.id === 8) // Filtra pelos IDs específicos
-      .map(project => ({
-        title: project.title,
-        imageUrl: project.imageUrl,
-        linkTo: `/projetos/${project.slug}`,
-      }))
-  },
+    icon: <Zap className="w-8 h-8" />,
+    title: 'Usinas',
+    description: 'Grandes projetos de geração solar',
+    gradient: 'from-yellow-400 to-yellow-600'
+  }
 ];
 
-const ServicesSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elements = entry.target.querySelectorAll('.animate-on-scroll');
-            elements.forEach((el) => {
-              el.classList.add('animate-fade-in');
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
+export default function ServicesPreview() {
   return (
-    <div ref={sectionRef} className="py-8 bg-gray-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-5xl mx-auto mb-1 animate-on-scroll opacity-0">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 m b-3">Nossos Serviços</h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl text-gray-600 leading-relaxed mb-4">
-            Oferecemos um conjunto completo de serviços em energia solar para atender às suas necessidades específicas.
-            Desde instalações residenciais até grandes projetos comerciais e industriais, nossa equipe especializada
-            garante soluções eficientes e sustentáveis para cada tipo de cliente.
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Nossos Serviços
+          </h2>
+          <div className="w-24 h-1 bg-yellow-400 mx-auto rounded-full mb-4"></div>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Soluções personalizadas para cada tipo de necessidade
           </p>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {services.map((service, index) => (
-            <ServiceCard
+            <div
               key={index}
-              service={service}
-              delay={index * 200}
-            />
+              className="group relative bg-white p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full bg-gradient-to-br opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+                   style={{
+                     backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
+                   }}
+                   className={`bg-gradient-to-br ${service.gradient}`}>
+              </div>
+
+              <div className="relative z-10">
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="text-white">
+                    {service.icon}
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  {service.description}
+                </p>
+
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-16 animate-on-scroll opacity-0">
-          <Link
-            to="/servicos"
-            className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-4 px-10 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+        <div className="text-center">
+          <a
+            href="/servicos"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-gradient-to-r from-[#fcec04] to-[#fcec04] hover:from-[#fcec04] hover:to-[#fcec04] text-[#040c6c]"
           >
             Ver Todos os Serviços
-          </Link>
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default ServicesSection;
+}

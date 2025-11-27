@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
-import logopreta from '../assets/images/logo/logo.png';
 import { Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const Header: React.FC = () => {
@@ -27,7 +26,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed w-full z-50 bg-white shadow-md py-2 transition-all duration-300">
+      <header className="fixed w-full z-50 bg-gradient-to-r from-[#040c6c] via-[#0a1c49] to-[#183d74] text-white shadow-md py-2 transition-all duration-300">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-between items-center">
             <Link
@@ -36,9 +35,9 @@ const Header: React.FC = () => {
               aria-label="ATO Energia - Página inicial"
             >
               <img
-                src={logopreta}
+                src='https://res.cloudinary.com/duzbjndww/image/upload/v1763356622/313118866_145266914904345_2579202774967658784_n-removebg-preview_dqvl0p.png'
                 alt="Logo ATO Energia"
-                className="h-16 md:h-20 w-auto drop-shadow-lg"
+                className="h-20 md:h-20 w-auto drop-shadow-lg"
               />
             </Link>
 
@@ -49,7 +48,7 @@ const Header: React.FC = () => {
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className={`text-base font-medium hover:text-blue-500 transition duration-200 ${location.pathname === link.path ? 'text-blue-600' : 'text-gray-700'}`}
+                      className={`text-base font-medium hover:text-[#fcec04] transition duration-200 ${location.pathname === link.path ? 'text-[#fcec04]' : 'text-gray-700'}`}
                     >
                       {link.name}
                     </Link>
@@ -64,14 +63,14 @@ const Header: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="text-gray-700 hover:text-blue-500 transition duration-200"
+                    className="text-gray-700 hover:text-[#fcec04] transition duration-200"
                   >
                     <social.icon size={20} />
                   </a>
                 ))}
                 <Link
                   to="/contato"
-                  className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200"
+                  className="flex items-center space-x-2 px-4 py-2 rounded-full bg-[#fcec04] text-[#040c6c] hover:bg-[#fcec04] hover:text-[#040c6c] transition-all duration-200"
                 >
                   <Phone size={16} />
                   <span>Fale Conosco</span>
@@ -104,7 +103,7 @@ const Header: React.FC = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className={`block py-2 text-lg ${location.pathname === link.path ? 'text-blue-600 font-medium' : 'text-gray-700'}`}
+                    className={`block py-2 text-lg ${location.pathname === link.path ? 'text-[#fcec04] font-medium' : 'text-gray-700'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -119,7 +118,7 @@ const Header: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="text-gray-700 hover:text-blue-500 transition duration-200"
+                    className="text-gray-700 hover:text-[#fcec04] transition duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <social.icon size={24} />
@@ -129,7 +128,7 @@ const Header: React.FC = () => {
               <li>
                 <Link
                   to="/contato"
-                  className="block text-center py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-200"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-gradient-to-r from-[#fcec04] to-[#fcec04] hover:from-[#fcec04] hover:to-[#fcec04] text-[#040c6c]"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Fale Conosco
@@ -141,7 +140,7 @@ const Header: React.FC = () => {
       )}
 
       {/* Conteúdo abaixo da navbar */}
-      <div className="mt-[80px]"> {/* Adicionando margem superior ao conteúdo */}
+      <div className="mt-[80px]"> {/* Adicionando margem superior ao conteúdo */} 
         {/* Aqui vai o seu conteúdo principal */}
       </div>
     </>
