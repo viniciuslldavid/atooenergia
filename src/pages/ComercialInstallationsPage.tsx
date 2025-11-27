@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import CTASection from '../components/CTASection';
 import { projects, Project } from '../data/projects';
 import { ArrowRight } from 'lucide-react';
 

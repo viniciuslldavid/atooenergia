@@ -47,12 +47,7 @@ export default function ServicesPreview() {
               key={index}
               className="group relative bg-white p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full bg-gradient-to-br opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-                   style={{
-                     backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
-                   }}
-                   className={`bg-gradient-to-br ${service.gradient}`}>
-              </div>
+
 
               <div className="relative z-10">
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
