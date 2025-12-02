@@ -1,17 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Zap, BarChart2, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import exemploVideo from '../assets/videos/video1.mp4'; // Ajuste o caminho relativo (ex.: '../' ou '../../')
 
 const backgroundImages = [
-  'https://res.cloudinary.com/dlthukrz8/image/upload/v1746617440/fundo1_nbqsuq.webp',
-  'https://res.cloudinary.com/dlthukrz8/image/upload/v1746617441/fundo2_csbmru.webp',
-  'https://res.cloudinary.com/duzbjndww/image/upload/v1751983304/IMG_20201031_174653-_2__1_lla3uk.webp'
 ];
 
 const backgroundVideos = [
   {
     sources: [
-      { src: 'https://drive.google.com/file/d/1Vs35QWuWTYEc49WLMQoliqJYIDKCd269/view?usp=sharing', type: 'video/mp4' }, // Vídeo de exemplo 1 (amostra gratuita)
+      { src: exemploVideo, type: 'video/mp4' }, // Vídeo de exemplo 1 (amostra gratuita)
       // Adicione WebM se disponível para otimização
     ],
     poster: backgroundImages[0]

@@ -61,12 +61,8 @@ const HomePage: React.FC = () => {
     <div>
       <HeroSection />
       <StatsSection />
-      <TestimonialsSection />
-      <ServicesSection />
-      <SolarSimulator />
       <InstagramSection />
-      <WorkingHours />
-      <ContactSection />
+      <SolarSimulator />
       <FABExpand />
     </div>
   );
