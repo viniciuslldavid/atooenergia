@@ -93,7 +93,7 @@ const AboutAndStats: React.FC = () => {
               </div>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Uma empresa privada de geração de energia fruto de uma joint venture entre a Prumo Logística, bp, Siemens Energy, Siemens AG e SPIC Brasil. Acreditamos e investimos no desenvolvimento do mercado de gás e energia do Brasil.
+                A ATO Energia Solar, localizada na Avenida Belarmino Cotta Pacheco, 411, Santa Mônica, Uberlândia, MG, é uma referência em soluções de energia solar na região. Desde a nossa fundação, nos dedicamos a oferecer alternativas sustentáveis e eficientes para residências, comércios e áreas rurais.
               </p>
 
               <a
@@ -112,7 +112,7 @@ const AboutAndStats: React.FC = () => {
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-20 blur-3xl" style={{ backgroundColor: '#ffed00' }}></div>
               <div className="relative z-10">
                 <img
-                  src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src=""
                   alt="Equipe ATO Energia"
                   className="rounded-xl shadow-2xl object-cover w-full h-[500px]"
                 />

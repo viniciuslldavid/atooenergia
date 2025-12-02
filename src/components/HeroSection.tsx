@@ -1,28 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Zap, BarChart2, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import exemploVideo from '../assets/videos/video1.mp4'; // Ajuste o caminho relativo (ex.: '../' ou '../../')
-
-const backgroundImages = [
-];
 
 const backgroundVideos = [
   {
-    sources: [
-      { src: exemploVideo, type: 'video/mp4' }, // Vídeo de exemplo 1 (amostra gratuita)
-      // Adicione WebM se disponível para otimização
-    ],
-    poster: backgroundImages[0]
-  },
-
+    iframeSrc: "https://drive.google.com/file/d/1Vs35QWuWTYEc49WLMQoliqJYIDKCd269/preview"
+  }
 ];
 
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [bgIndex, setBgIndex] = useState(0);
 
-  // Intervalo para trocar de vídeo a cada 7 segundos
+  // Intervalo para trocar de vídeo a cada 7 segundos (caso adicione mais vídeos)
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % backgroundVideos.length);
@@ -31,59 +21,22 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Controla play/pause dos vídeos baseado no índice atual
-  useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === bgIndex) {
-          // Reinicia o vídeo para um loop mais limpo (opcional: remova se preferir continuidade)
-          video.currentTime = 0;
-          video.play().catch((e) => {
-            console.log('Autoplay bloqueado para vídeo', index, e);
-          });
-        } else {
-          video.pause();
-          video.currentTime = 0; // Reset para próximo ciclo
-        }
-      }
-    });
-
-    // Cleanup: pausa todos os vídeos ao desmontar
-    return () => {
-      videoRefs.current.forEach((video) => {
-        if (video) video.pause();
-      });
-    };
-  }, [bgIndex]);
-
   return (
     <div ref={heroRef} className="relative min-h-screen text-white overflow-hidden">
-      {/* Carrossel de vídeos de fundo */}
+      
+      {/* Vídeo de fundo (via Google Drive iframe) */}
       <div className="absolute inset-0 z-0">
         {backgroundVideos.map((videoData, index) => (
-          <video
+          <iframe
             key={index}
-            ref={(el) => (videoRefs.current[index] = el)}
+            src={videoData.iframeSrc}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
             style={{
               opacity: index === bgIndex ? 1 : 0,
+              pointerEvents: "none" // impede clique no iframe
             }}
-            loop
-            muted
-            playsInline
-            preload={index === 0 ? 'auto' : 'metadata'} // Carrega completo o primeiro, metadados nos outros para performance
-            poster={videoData.poster} // Imagem de fallback durante carregamento
-          >
-            {videoData.sources.map((source, sIndex) => (
-              <source key={sIndex} {...source} />
-            ))}
-            {/* Fallback para imagem se vídeo não suportar */}
-            <img
-              src={videoData.poster}
-              alt={`Fundo hero ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </video>
+            allow="autoplay"
+          ></iframe>
         ))}
       </div>
 
@@ -98,6 +51,7 @@ const HeroSection: React.FC = () => {
               Soluções energéticas inteligentes e sustentáveis para residências e empresas. Reduza seus custos com energia.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              
               {/* Botão "Conheça Nossos Serviços" */}
               <Link
                 to="/servicos"
@@ -106,6 +60,7 @@ const HeroSection: React.FC = () => {
                 Conheça Nossos Serviços
                 <ArrowRight size={18} className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
+
               {/* Botão "Fale Conosco" */}
               <a
                 href="#contatowhatsapp"
@@ -137,10 +92,12 @@ const HeroSection: React.FC = () => {
                 ))}
               </div>
             </div>
+
             <div className="absolute -bottom-4 -right-4 bg-[#fcec04] hover:bg-[#f9e800] px-6 py-3 rounded-lg shadow-lg">
               <p className="text-[#040c6c] font-medium text-sm">Mais de 100+ clientes satisfeitos</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>

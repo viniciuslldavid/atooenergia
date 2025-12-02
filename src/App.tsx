@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import SobreNosPage from './pages/SobreNosPage';
+import TechnologyPage from './pages/TechnologyPage';
 import ServicosPage from './pages/ServicosPage';
 import ContatoPage from './pages/ContatoPage';
 import ResidentialInstallationsPage from './pages/ResidentialInstallationsPage';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/sobre-nos" element={<SobreNosPage />} />
             <Route path="/servicos" element={<ServicosPage />} />
+            <Route path="/tecnologia" element={<TechnologyPage />} />
             <Route path="/contato" element={<ContatoPage />} />
             <Route path="/servicos/residencial" element={<ResidentialInstallationsPage />} />
             <Route path="/servicos/comercial" element={<CommercialInstallationsPage/>} />

@@ -1,4 +1,4 @@
-import { Home, Building2, Sprout, Zap, ArrowRight, Lightbulb, TrendingUp, Shield, Leaf } from 'lucide-react';
+import { Home, Building2, Sprout, Zap, ArrowRight, Lightbulb, TrendingUp, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Service {
@@ -10,7 +10,6 @@ interface Service {
   features: string[];
   benefits: string[];
   imageUrl: string;
-  accentColor: 'blue' | 'yellow';
   stat: string;
   statLabel: string;
 }
@@ -38,7 +37,6 @@ const services: Service[] = [
       'Energia limpa para sua família'
     ],
     imageUrl: 'https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    accentColor: 'blue',
     stat: '15.000+',
     statLabel: 'Casas Alimentadas'
   },
@@ -46,7 +44,7 @@ const services: Service[] = [
     id: 'comercial',
     icon: <Building2 className="w-8 h-8" />,
     title: 'Comercial',
-    subtitle: 'Reduce custos e impulsione seu negócio',
+    subtitle: 'Reduza custos e impulsione seu negócio',
     description: 'Reduza custos operacionais e aumente a competitividade. Projetos escaláveis especificamente desenvolvidos para empresas, com retorno garantido e máximo controle operacional.',
     features: [
       'Projetos escaláveis para qualquer porte',
@@ -64,7 +62,6 @@ const services: Service[] = [
       'Diferencial competitivo no mercado'
     ],
     imageUrl: 'https://images.pexels.com/photos/9875365/pexels-photo-9875365.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    accentColor: 'yellow',
     stat: '500+',
     statLabel: 'Empresas Parceiras'
   },
@@ -90,7 +87,6 @@ const services: Service[] = [
       'Compliance com normas ambientais'
     ],
     imageUrl: 'https://images.pexels.com/photos/2252618/pexels-photo-2252618.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    accentColor: 'blue',
     stat: '250+',
     statLabel: 'Propriedades Rurais'
   },
@@ -116,7 +112,6 @@ const services: Service[] = [
       'Impacto ambiental positivo'
     ],
     imageUrl: 'https://images.pexels.com/photos/9875440/pexels-photo-9875440.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    accentColor: 'yellow',
     stat: '50MW+',
     statLabel: 'Potência Instalada'
   }
@@ -126,90 +121,75 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
   const isEven = index % 2 === 0;
 
   return (
-    <div className="mb-24 last:mb-0">
-      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${!isEven && 'lg:grid-cols-2'}`}>
+    <div className="mb-32 last:mb-0">
+      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven && 'lg:grid-cols-2'}`}>
 
         <div className={`relative group overflow-hidden rounded-3xl shadow-2xl ${!isEven && 'lg:order-2'}`}>
+          <div className="absolute inset-0 bg-[#1c355f] opacity-10 z-10"></div>
           <img
             src={service.imageUrl}
             alt={service.title}
-            className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#1c355f]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
         </div>
 
         <div className={`${!isEven && 'lg:order-1'}`}>
-          <div className="flex items-center gap-4 mb-4">
-            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 ${
-              service.accentColor === 'blue'
-                ? 'bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600'
-                : 'bg-gradient-to-br from-yellow-100 to-yellow-50 text-yellow-600'
-            }`}>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 bg-gradient-to-br from-[#ffed00] to-[#ffd700] text-[#1c355f]">
               {service.icon}
             </div>
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+              <h2 className="text-4xl lg:text-5xl font-bold text-[#1c355f]">
                 {service.title}
               </h2>
-              <p className={`text-sm font-semibold ${
-                service.accentColor === 'blue' ? 'text-blue-600' : 'text-yellow-600'
-              }`}>
+              <p className="text-sm font-semibold text-[#1c355f]/70 mt-1">
                 {service.subtitle}
               </p>
             </div>
           </div>
 
-          <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+          <p className="text-gray-700 text-lg mb-10 leading-relaxed">
             {service.description}
           </p>
 
-          <div className={`mb-8 p-6 rounded-2xl ${
-            service.accentColor === 'blue'
-              ? 'bg-blue-50 border border-blue-100'
-              : 'bg-yellow-50 border border-yellow-100'
-          }`}>
-            <p className={`text-3xl font-bold ${
-              service.accentColor === 'blue' ? 'text-blue-600' : 'text-yellow-600'
-            }`}>
+          <div className="mb-10 p-8 rounded-2xl bg-[#1c355f] shadow-xl">
+            <p className="text-4xl font-bold text-[#ffed00]">
               {service.stat}
             </p>
-            <p className="text-gray-600 font-medium">{service.statLabel}</p>
+            <p className="text-white/90 font-medium mt-1">{service.statLabel}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Lightbulb className={`w-5 h-5 ${
-                  service.accentColor === 'blue' ? 'text-blue-600' : 'text-yellow-600'
-                }`} />
-                <h3 className="text-lg font-bold text-gray-900">Características</h3>
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-10 h-10 rounded-lg bg-[#ffed00] flex items-center justify-center">
+                  <Lightbulb className="w-5 h-5 text-[#1c355f]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#1c355f]">Características</h3>
               </div>
               <ul className="space-y-3">
                 {service.features.slice(0, 3).map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
-                      service.accentColor === 'blue' ? 'bg-blue-600' : 'bg-yellow-600'
-                    }`}></span>
-                    <span className="text-gray-700 text-sm">{feature}</span>
+                    <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#ffed00]"></span>
+                    <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className={`w-5 h-5 ${
-                  service.accentColor === 'blue' ? 'text-blue-600' : 'text-yellow-600'
-                }`} />
-                <h3 className="text-lg font-bold text-gray-900">Benefícios</h3>
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-10 h-10 rounded-lg bg-[#ffed00] flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-[#1c355f]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#1c355f]">Benefícios</h3>
               </div>
               <ul className="space-y-3">
                 {service.benefits.slice(0, 3).map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
-                      service.accentColor === 'blue' ? 'bg-blue-600' : 'bg-yellow-600'
-                    }`}></span>
-                    <span className="text-gray-700 text-sm">{benefit}</span>
+                    <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#ffed00]"></span>
+                    <span className="text-gray-700 text-sm leading-relaxed">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -218,11 +198,7 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
 
           <Link
             to={`/servicos/${service.id}`}
-            className={`inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 ${
-              service.accentColor === 'blue'
-                ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white'
-                : 'bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900'
-            }`}
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-gradient-to-r from-[#1c355f] to-[#1c355f]/90 hover:from-[#1c355f]/90 hover:to-[#1c355f] text-white border-2 border-[#ffed00]"
           >
             Explorar Serviço
             <ArrowRight className="w-5 h-5" />
@@ -236,50 +212,42 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="pt-20 pb-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Nossos Serviços
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Oferecemos soluções completas em energia solar para cada necessidade, desde residências até grandes usinas comerciais.
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {services.map((service, index) => (
           <ServiceCard key={service.id} service={service} index={index} />
         ))}
       </div>
 
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="bg-gradient-to-r from-[#1c355f] to-[#1c355f]/90 py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffed00] rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Leaf className="w-8 h-8 text-yellow-400" />
-                <span className="text-yellow-400 font-bold text-sm uppercase tracking-wide">Transformação Sustentável</span>
+              <div className="flex items-center gap-3 mb-6">
+                <Leaf className="w-8 h-8 text-[#ffed00]" />
+                <span className="text-[#ffed00] font-bold text-sm uppercase tracking-wide">Transformação Sustentável</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Pronto para Começar sua Jornada Solar?
               </h2>
-              <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+              <p className="text-white/90 text-lg mb-10 leading-relaxed">
                 Nossos especialistas estão prontos para analisar sua situação e criar uma solução personalizada com máximo potencial de economia e sustentabilidade.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contato"
-                  className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 bg-[#ffed00] hover:bg-[#ffd700] text-[#1c355f] px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
                 >
                   Solicitar Orçamento
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/30"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 border-2 border-white/30 backdrop-blur-sm"
                 >
                   Voltar ao Início
                 </Link>
@@ -287,18 +255,17 @@ export default function ServicesPage() {
             </div>
 
             <div className="hidden md:flex justify-center">
-              <div className="relative w-64 h-64">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-blue-400/20 rounded-3xl transform rotate-45"></div>
+              <div className="relative w-80 h-80">
+                <div className="absolute inset-0 bg-[#ffed00] rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute inset-8 bg-[#ffed00] rounded-full opacity-10 animate-pulse" style={{ animationDelay: '1s' }}></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Zap className="w-32 h-32 text-yellow-300 opacity-30 animate-pulse" />
+                  <Zap className="w-40 h-40 text-[#ffed00] opacity-40" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 }
