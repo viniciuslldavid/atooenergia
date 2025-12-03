@@ -66,7 +66,7 @@ function InstagramSection() {
 
         <div className="flex justify-center">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/ato.energia"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-[#40959b] px-8 py-4 rounded-full font-bold text-base hover:bg-[#ffed00] hover:text-[#1c355f] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"

@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import { Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +21,6 @@ const Header = () => {
         { name: 'Usinas', path: '/servicos/usinas' },
       ]
     },
-
-    
     { name: 'Tecnologias', path: '/tecnologia' },
     { name: 'Sobre Nós', path: '/sobre-nos' },
     { name: 'Contato', path: '/contato' },
@@ -50,7 +47,7 @@ const Header = () => {
           <div className="bg-gradient-to-b from-[#1c2f58] to-[#40959b] text-white shadow-md relative">
             <div className="container mx-auto px-4 md:px-6 py-3">
               <div className="flex justify-between items-center">
-                <div className="flex items-center gap-8 relative z-20">
+                <div className="flex items-center gap-12 relative z-30 ml-32">
                   <a
                     href="/"
                     className="flex items-center"
@@ -59,7 +56,7 @@ const Header = () => {
                     <img
                       src='https://res.cloudinary.com/duzbjndww/image/upload/v1763356622/313118866_145266914904345_2579202774967658784_n-removebg-preview_dqvl0p.png'
                       alt="Logo ATO Energia"
-                      className="h-28 w-auto drop-shadow-lg"
+                      className="h-28 w-auto drop-shadow-lg relative z-30"
                     />
                   </a>
 
@@ -103,7 +100,7 @@ const Header = () => {
                   </nav>
                 </div>
 
-                <div className="hidden md:flex items-center space-x-4 relative z-20">
+                <div className="hidden md:flex items-center space-x-4 relative z-30">
                   {socialLinks.map((social) => (
                     <a
                       key={social.name}
@@ -126,7 +123,7 @@ const Header = () => {
                 </div>
 
                 <button
-                  className="md:hidden p-1 focus:outline-none relative z-20"
+                  className="md:hidden p-1 focus:outline-none relative z-30"
                   onClick={toggleMenu}
                   aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
                 >

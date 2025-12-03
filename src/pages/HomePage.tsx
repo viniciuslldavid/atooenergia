@@ -61,8 +61,9 @@ const HomePage: React.FC = () => {
     <div>
       <HeroSection />
       <StatsSection />
-      <InstagramSection />
+      <ServicesSection/>
       <SolarSimulator />
+            <InstagramSection />
       <FABExpand />
     </div>
   );

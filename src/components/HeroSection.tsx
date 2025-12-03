@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
               </a>
             </div>
           </div>
-
+{/*
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/20">
               <div className="grid grid-cols-2 gap-4">
@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
               <p className="text-[#040c6c] font-medium text-sm">Mais de 100+ clientes satisfeitos</p>
             </div>
           </div>
-
+*/}
         </div>
       </div>
     </div>
