@@ -1,0 +1,3 @@
+# Ignorar vídeos
+src/assets/videos/
+*.mp4
