@@ -1,5 +1,4 @@
-import { Zap, Sun, Battery, Cpu, Shield, TrendingUp, Award, CheckCircle, ArrowRight, Gauge, Wifi, Cloud } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Zap, Sun, Gauge, Shield, TrendingUp, Award, CheckCircle, ArrowRight, Thermometer, Camera, Ruler, Target, Activity, Radio } from 'lucide-react';
 
 interface Technology {
   icon: React.ReactNode;
@@ -11,82 +10,186 @@ interface Technology {
 
 const technologies: Technology[] = [
   {
+    icon: <Gauge className="w-12 h-12" />,
+    title: 'Alicate Amperímetro Fluke',
+    description: 'Utilizado para medir a corrente elétrica do sistema solar sem desligamento, garantindo que placas e inversores estejam gerando energia corretamente.',
+    features: [
+      'Medição sem interrupção do sistema',
+      'Alta precisão nas leituras',
+      'Verificação de geração em tempo real',
+      'Diagnóstico rápido de performance',
+      'Certificação Fluke de qualidade'
+    ],
+    highlight: 'Medição profissional sem desligamento'
+  },
+  {
+    icon: <Camera className="w-12 h-12" />,
+    title: 'Câmera Térmica Fluke',
+    description: 'Permite identificar aquecimentos anormais em módulos, cabos e inversores, prevenindo perdas de eficiência e falhas no sistema.',
+    features: [
+      'Detecção de pontos quentes',
+      'Prevenção de falhas',
+      'Inspeção não invasiva',
+      'Imagens térmicas de alta resolução',
+      'Identificação de problemas invisíveis'
+    ],
+    highlight: 'Previne falhas antes que aconteçam'
+  },
+  {
     icon: <Sun className="w-12 h-12" />,
-    title: 'Painéis Fotovoltaicos de Alta Eficiência',
-    description: 'Utilizamos apenas painéis solares de última geração com células PERC e Half-Cell, garantindo máxima conversão de energia solar.',
+    title: 'Fotocélula (Medição de Irradiância)',
+    description: 'Utilizada para medir a radiação solar no momento dos ensaios, garantindo que as condições estejam adequadas para avaliações confiáveis do desempenho.',
     features: [
-      'Eficiência superior a 21%',
-      'Tecnologia PERC (Passivated Emitter Rear Cell)',
-      'Células Half-Cell para redução de perdas',
-      'Resistência a condições climáticas extremas',
-      'Degradação anual inferior a 0.5%'
+      'Medição precisa de radiação solar',
+      'Validação das condições de teste',
+      'Calibração certificada',
+      'Dados para análise de performance',
+      'Garantia de ensaios confiáveis'
     ],
-    highlight: 'Garantia de 25 anos com 85% de eficiência'
-  },
-  {
-    icon: <Battery className="w-12 h-12" />,
-    title: 'Inversores Inteligentes',
-    description: 'Inversores de última geração com tecnologia MPPT avançada para otimização contínua da geração de energia.',
-    features: [
-      'Tecnologia MPPT de duplo rastreamento',
-      'Eficiência de conversão acima de 98%',
-      'Monitoramento em tempo real via Wi-Fi',
-      'Proteção contra sobretensão e curto-circuito',
-      'Compatível com baterias e sistemas híbridos'
-    ],
-    highlight: 'Garantia de 10 anos extensível a 20 anos'
-  },
-  {
-    icon: <Cpu className="w-12 h-12" />,
-    title: 'Sistema de Monitoramento Inteligente',
-    description: 'Plataforma completa de monitoramento com inteligência artificial para análise preditiva e otimização automática.',
-    features: [
-      'Dashboard intuitivo mobile e web',
-      'Alertas em tempo real de performance',
-      'Análise preditiva com IA',
-      'Relatórios detalhados de geração',
-      'Comparação de consumo e economia'
-    ],
-    highlight: 'Acesso 24/7 de qualquer dispositivo'
+    highlight: 'Ensaios em condições certificadas'
   },
   {
     icon: <Shield className="w-12 h-12" />,
-    title: 'Estruturas de Fixação Premium',
-    description: 'Estruturas robustas em alumínio aeronáutico e aço galvanizado, projetadas para suportar ventos de até 150 km/h.',
+    title: 'Luva Isolada',
+    description: 'Equipamento de segurança essencial para proteger os técnicos durante inspeções e medições em sistemas solares energizados.',
     features: [
-      'Alumínio aeronáutico e aço galvanizado',
-      'Sistema anti-corrosão avançado',
-      'Certificação para ventos de até 150 km/h',
-      'Instalação sem perfuração do telhado',
-      'Adaptável a qualquer tipo de cobertura'
+      'Proteção contra choques elétricos',
+      'Certificação de segurança',
+      'Material isolante de alta qualidade',
+      'Conformidade com normas NR-10',
+      'Testes periódicos de isolamento'
     ],
-    highlight: 'Certificado para todas as normas brasileiras'
+    highlight: 'Segurança certificada NR-10'
   },
   {
-    icon: <Wifi className="w-12 h-12" />,
-    title: 'Conectividade IoT',
-    description: 'Integração total com Internet das Coisas para automação residencial e gestão energética inteligente.',
+    icon: <Activity className="w-12 h-12" />,
+    title: 'Megômetro',
+    description: 'Verifica o isolamento elétrico do sistema solar, identificando possíveis fugas de corrente e garantindo segurança e durabilidade da instalação.',
     features: [
-      'Integração com automação residencial',
-      'Controle via assistentes de voz',
-      'API aberta para integrações customizadas',
-      'Armazenamento em nuvem seguro',
-      'Sincronização multi-dispositivos'
+      'Teste de isolamento elétrico',
+      'Detecção de fugas de corrente',
+      'Garantia de segurança',
+      'Prevenção de falhas',
+      'Conformidade com normas técnicas'
     ],
-    highlight: 'Compatível com Alexa, Google Home e Apple HomeKit'
+    highlight: 'Segurança e durabilidade garantidas'
   },
   {
-    icon: <Cloud className="w-12 h-12" />,
-    title: 'Armazenamento em Baterias',
-    description: 'Sistemas de armazenamento de energia com baterias de íon-lítio para independência energética total.',
+    icon: <Ruler className="w-12 h-12" />,
+    title: 'Microhmímetro',
+    description: 'Utilizado para avaliar a qualidade das conexões elétricas, evitando aquecimentos e perdas de energia.',
     features: [
-      'Baterias de íon-lítio de alta capacidade',
-      'Ciclos de carga superior a 6.000',
-      'Gerenciamento inteligente de carga',
-      'Backup automático em quedas de energia',
-      'Expansão modular conforme necessidade'
+      'Avaliação de conexões elétricas',
+      'Prevenção de aquecimentos',
+      'Redução de perdas energéticas',
+      'Medições de alta precisão',
+      'Otimização do sistema'
     ],
-    highlight: 'Autonomia de até 3 dias sem sol'
+    highlight: 'Conexões perfeitas, zero perdas'
+  },
+  {
+    icon: <Target className="w-12 h-12" />,
+    title: 'Miliohmímetro',
+    description: 'Mede a resistência de contato em cabos e conexões, assegurando eficiência na condução da energia gerada.',
+    features: [
+      'Medição de resistência de contato',
+      'Eficiência na condução',
+      'Identificação de conexões defeituosas',
+      'Otimização de performance',
+      'Alta precisão nas medições'
+    ],
+    highlight: 'Máxima eficiência de condução'
+  },
+  {
+    icon: <Thermometer className="w-12 h-12" />,
+    title: 'Termohigrômetro',
+    description: 'Mede temperatura e umidade ambiente, auxiliando na análise do desempenho do sistema solar.',
+    features: [
+      'Medição de temperatura',
+      'Medição de umidade',
+      'Análise de condições ambientais',
+      'Dados para relatórios técnicos',
+      'Calibração certificada'
+    ],
+    highlight: 'Análise completa das condições ambientais'
+  },
+  {
+    icon: <Radio className="w-12 h-12" />,
+    title: 'Terrômetro',
+    description: 'Utilizado para verificar a eficiência do aterramento, garantindo proteção contra descargas elétricas.',
+    features: [
+      'Verificação de aterramento',
+      'Proteção contra descargas',
+      'Segurança do sistema',
+      'Conformidade com normas',
+      'Testes periódicos certificados'
+    ],
+    highlight: 'Proteção total contra descargas'
+  },
+  {
+    icon: <Gauge className="w-12 h-12" />,
+    title: 'Torquímetro',
+    description: 'Assegura o aperto correto de conexões elétricas e mecânicas, prevenindo falhas e aquecimentos.',
+    features: [
+      'Aperto certificado de conexões',
+      'Prevenção de falhas mecânicas',
+      'Evita aquecimentos',
+      'Calibração de precisão',
+      'Conformidade técnica'
+    ],
+    highlight: 'Conexões seguras e duráveis'
+  },
+  {
+    icon: <Zap className="w-12 h-12" />,
+    title: 'Equipamento HIPOT (Alta Tensão)',
+    description: 'Realiza testes de isolamento sob alta tensão, garantindo conformidade técnica e segurança do sistema solar.',
+    features: [
+      'Testes de alta tensão',
+      'Verificação de isolamento',
+      'Conformidade técnica',
+      'Segurança certificada',
+      'Prevenção de falhas críticas'
+    ],
+    highlight: 'Testes de isolamento certificados'
+  },
+  {
+    icon: <Activity className="w-12 h-12" />,
+    title: 'TTR (Transformer Turns Ratio)',
+    description: 'Verifica o funcionamento correto dos transformadores utilizados no sistema solar.',
+    features: [
+      'Teste de transformadores',
+      'Verificação de relação de espiras',
+      'Diagnóstico de funcionamento',
+      'Prevenção de falhas',
+      'Conformidade técnica'
+    ],
+    highlight: 'Transformadores operando perfeitamente'
+  },
+  {
+    icon: <Activity className="w-12 h-12" />,
+    title: 'Traçador de Curva IV',
+    description: 'Avalia o desempenho real das placas solares, identificando falhas, sombreamento ou degradação.',
+    features: [
+      'Análise de curva IV completa',
+      'Identificação de falhas',
+      'Detecção de sombreamento',
+      'Avaliação de degradação',
+      'Relatórios técnicos detalhados'
+    ],
+    highlight: 'Diagnóstico preciso de performance'
+  },
+  {
+    icon: <Camera className="w-12 h-12" />,
+    title: 'Drone Termográfico DJI Mavic 3T',
+    description: 'Utilizado para inspeções aéreas com imagens térmicas, identificando falhas em módulos e strings de forma rápida e segura.',
+    features: [
+      'Inspeção aérea termográfica',
+      'Imagens de alta resolução',
+      'Identificação rápida de falhas',
+      'Segurança na inspeção',
+      'Cobertura de grandes áreas'
+    ],
+    highlight: 'Inspeção aérea de última geração'
   }
 ];
 
@@ -116,23 +219,23 @@ const certifications = [
 const stats = [
   {
     icon: <TrendingUp className="w-8 h-8" />,
-    value: '98.5%',
-    label: 'Eficiência Média dos Sistemas'
-  },
-  {
-    icon: <Gauge className="w-8 h-8" />,
-    value: '25+',
-    label: 'Anos de Garantia'
-  },
-  {
-    icon: <Zap className="w-8 h-8" />,
-    value: '99.2%',
-    label: 'Uptime dos Sistemas'
+    value: '14+',
+    label: 'Equipamentos de Precisão'
   },
   {
     icon: <Shield className="w-8 h-8" />,
     value: '100%',
-    label: 'Certificações Atendidas'
+    label: 'Segurança Certificada'
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    value: '99.9%',
+    label: 'Precisão nas Medições'
+  },
+  {
+    icon: <Award className="w-8 h-8" />,
+    value: 'Fluke',
+    label: 'Equipamentos Premium'
   }
 ];
 
@@ -147,14 +250,14 @@ export default function TechnologyPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-[#ffed00]/20 backdrop-blur-sm border border-[#ffed00]/30 rounded-full px-6 py-3 mb-8">
-              <Cpu className="w-5 h-5 text-[#ffed00]" />
-              <span className="text-[#ffed00] font-bold text-sm uppercase tracking-wide">Inovação e Excelência</span>
+              <Gauge className="w-5 h-5 text-[#ffed00]" />
+              <span className="text-[#ffed00] font-bold text-sm uppercase tracking-wide">Equipamentos de Precisão</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Nossa Tecnologia
+              Tecnologias Aplicadas
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Trabalhamos com os equipamentos mais avançados do mercado, garantindo máxima eficiência, durabilidade e retorno sobre o investimento.
+              Utilizamos os equipamentos mais avançados para medição, inspeção e análise de sistemas de energia solar, garantindo máxima precisão e segurança.
             </p>
           </div>
         </div>
@@ -179,10 +282,10 @@ export default function TechnologyPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1c355f] mb-6">
-            Tecnologias de Ponta
+            Equipamentos de Medição e Inspeção
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Cada componente é cuidadosamente selecionado para garantir a melhor performance e durabilidade do seu sistema.
+            Cada equipamento é utilizado para garantir a máxima performance, segurança e durabilidade do seu sistema de energia solar.
           </p>
         </div>
 
@@ -265,28 +368,28 @@ export default function TechnologyPage() {
               <div className="max-w-3xl">
                 <div className="flex items-center gap-3 mb-6">
                   <Zap className="w-8 h-8 text-[#ffed00]" />
-                  <span className="text-[#ffed00] font-bold text-sm uppercase tracking-wide">Tecnologia de Ponta</span>
+                  <span className="text-[#ffed00] font-bold text-sm uppercase tracking-wide">Equipamentos Profissionais</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                  Pronto para Ter a Melhor Tecnologia Solar?
+                  Pronto para uma Inspeção Profissional?
                 </h2>
                 <p className="text-white/90 text-lg mb-10 leading-relaxed">
-                  Entre em contato e descubra como nossas soluções tecnológicas podem transformar seu consumo de energia.
+                  Entre em contato e descubra como nossos equipamentos de última geração podem garantir máxima performance do seu sistema solar.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/contato"
+                  <a
+                    href="#contato"
                     className="inline-flex items-center justify-center gap-2 bg-[#ffed00] hover:bg-[#ffd700] text-[#1c355f] px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105"
                   >
-                    Solicitar Orçamento
+                    Solicitar Inspeção
                     <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    to="/servicos"
+                  </a>
+                  <a
+                    href="#servicos"
                     className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 border-2 border-white/30 backdrop-blur-sm"
                   >
                     Ver Serviços
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

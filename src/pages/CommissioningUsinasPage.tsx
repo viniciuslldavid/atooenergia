@@ -11,7 +11,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
   <Link
     to={`/projetos/${project.slug}`}
-    state={{ from: '/servicos/comissionamentousinas' }}
+    state={{ from: '/servicos/usinas' }}
     className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 group overflow-hidden hover:scale-[1.02] animate-fade-in"
     style={{ animationDelay: `${index * 150}ms` }}
   >

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Building2, Sprout, Zap, ArrowRight } from 'lucide-react';
+import { Home, Building2, Sprout, Zap, Droplet, ArrowRight } from 'lucide-react';
 import HarmonyBackground from './HarmonyBackground';
 
 interface ServiceCard {
@@ -20,7 +20,7 @@ function ServicesSection() {
       icon: <Home className="w-8 h-8" />,
       title: 'Residencial',
       subtitle: 'Economia e sustentabilidade para sua casa',
-      image: 'https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746246440/ISAIAS_ougz9z.jpg', 
       stat: '15.000+',
       statLabel: 'Casas Alimentadas',
       color: 'from-blue-500',
@@ -30,7 +30,7 @@ function ServicesSection() {
       icon: <Building2 className="w-8 h-8" />,
       title: 'Comercial',
       subtitle: 'Reduza custos e impulsione seu negócio',
-      image: 'https://images.pexels.com/photos/9875365/pexels-photo-9875365.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768821361/DJI_20230803144154_0002_V_zw03uy.jpg',
       stat: '500+',
       statLabel: 'Empresas Parceiras',
       color: 'from-green-500',
@@ -50,10 +50,20 @@ function ServicesSection() {
       icon: <Zap className="w-8 h-8" />,
       title: 'Usinas',
       subtitle: 'Projetos de grande impacto energético',
-      image: 'https://images.pexels.com/photos/9875440/pexels-photo-9875440.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746309538/Comissionamento_UFV_AGI_II_-_Posts-img-14_arttl3.webp',
       stat: '50MW+',
       statLabel: 'Potência Instalada',
       color: 'from-orange-500',
+    },
+    {
+      id: 'limpeza-manutencao',
+      icon: <Droplet className="w-8 h-8" />,
+      title: 'Limpeza e Manutenção',
+      subtitle: 'Manutenção preventiva e corretiva de painéis solares',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768820048/WhatsApp_Image_2025-12-19_at_18.47.59_lwu8g5.jpg',
+      stat: '5000+',
+      statLabel: 'Painéis Limpos',
+      color: 'from-cyan-500',
     },
   ];
 

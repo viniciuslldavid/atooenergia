@@ -82,18 +82,23 @@ const StatItem: React.FC<StatItemProps> = ({ value, suffix, label, duration, ico
 const AboutAndStats: React.FC = () => {
   return (
     <>
-            <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-20 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div>
-                                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
                   Somos a <span className="font-bold border-b-4" style={{ borderColor: '#ffed00' }}>ATO</span>
                 </h2>
               </div>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                A ATO Energia Solar, localizada na Avenida Belarmino Cotta Pacheco, 411, Santa Mônica, Uberlândia, MG, é uma referência em soluções de energia solar na região. Desde a nossa fundação, nos dedicamos a oferecer alternativas sustentáveis e eficientes para residências, comércios e áreas rurais.
+                Somos uma empresa especializada em energia renovável, comprometida em
+                transformar o potencial do sol em resultados reais. Na
+                ATO ENERGIA
+                , acreditamos em
+                uma matriz limpa e sustentável, trabalhando com confiança, qualidade e atitude para
+                transformar vidas e negócios.
               </p>
 
               <a
@@ -112,7 +117,7 @@ const AboutAndStats: React.FC = () => {
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-20 blur-3xl" style={{ backgroundColor: '#ffed00' }}></div>
               <div className="relative z-10">
                 <img
-                  src=""
+                  src="https://res.cloudinary.com/duzbjndww/image/upload/v1768821116/IMG_20200918_174926_jd39yo.jpg"
                   alt="Equipe ATO Energia"
                   className="rounded-xl shadow-2xl object-cover w-full h-[500px]"
                 />

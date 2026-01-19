@@ -47,13 +47,13 @@ const SobreNosPage = () => {
       name: 'Wesley Santiago',
       role: 'CTO & Cofundador',
       description: '',
-      image: ''
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768820151/WhatsApp_Image_2025-12-19_at_18.54.33_nbkfvg.jpg'
     },
     {
       name: 'João Luiz Segatto',
       role: 'CEO & Cofundador',
       description: '',
-      image: ''
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768820139/WhatsApp_Image_2025-12-19_at_18.55.58_curdsc.jpg'
     }
   ];
 
@@ -95,7 +95,7 @@ const SobreNosPage = () => {
             <div className="relative group overflow-hidden rounded-3xl shadow-2xl">
               <div className="absolute inset-0 bg-[#1c355f] opacity-10 z-10"></div>
               <img
-                src="https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://res.cloudinary.com/dlthukrz8/image/upload/v1746246440/ISAIAS_ougz9z.jpg"
                 alt="ATO Energia"
                 className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -113,16 +113,21 @@ const SobreNosPage = () => {
               </h2>
 
               <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p>
-                  A <strong className="text-[#1c355f]">ATO Energia Solar</strong>, localizada na Avenida Belarmino Cotta Pacheco, 411, Santa Mônica, Uberlândia, MG, é uma referência em soluções de energia solar na região. Desde a nossa fundação, nos dedicamos a oferecer alternativas sustentáveis e eficientes para residências, comércios e áreas rurais.
-                </p>
 
                 <p>
-                  Com uma equipe especializada e experiente, combinamos <strong className="text-[#1c355f]">inovação e qualidade</strong> para atender às necessidades de nossos clientes, desde a instalação até a manutenção dos sistemas.
-                </p>
+                  Somos uma empresa especializada em energia renovável, comprometida em
+                  transformar o potencial do sol em resultados reais. Na
+                  ATO ENERGIA
+                  , acreditamos em
+                  uma matriz limpa e sustentável, trabalhando com confiança, qualidade e atitude para
+                  transformar vidas e negócios.
+                  Com mais de 5 anos de atuação, construímos uma trajetória sólida na geração de
+                  energia em usinas fotovoltaicas, entregando segurança, eficiência e alta performance.
+                  Nosso propósito é evoluir continuamente para sermos referência nacional em energia
+                  sustentável, construindo um futuro melhor para clientes e colaboradores.
+                  Mais do que executar, impulsionamos o sucesso dos nossos parceiros com soluções
+                  precisas, práticas e personalizadas para cada projeto.
 
-                <p>
-                  Oferecemos uma ampla gama de serviços, incluindo energia solar residencial, comercial, off grid, on grid e usinas solares. Também realizamos limpeza de painéis solares para garantir o desempenho ideal dos sistemas.
                 </p>
               </div>
 

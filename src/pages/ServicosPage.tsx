@@ -1,4 +1,4 @@
-import { Home, Building2, Sprout, Zap, ArrowRight, Lightbulb, TrendingUp, Leaf } from 'lucide-react';
+import { Home, Building2, Sprout, Zap, ArrowRight, Lightbulb, TrendingUp, Leaf, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Service {
@@ -36,7 +36,7 @@ const services: Service[] = [
       'Proteção contra aumentos na tarifa',
       'Energia limpa para sua família'
     ],
-    imageUrl: 'https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageUrl: 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746246440/ISAIAS_ougz9z.jpg',
     stat: '15.000+',
     statLabel: 'Casas Alimentadas'
   },
@@ -61,7 +61,7 @@ const services: Service[] = [
       'Incentivos fiscais e financiamentos',
       'Diferencial competitivo no mercado'
     ],
-    imageUrl: 'https://images.pexels.com/photos/9875365/pexels-photo-9875365.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageUrl: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768821361/DJI_20230803144154_0002_V_zw03uy.jpg',
     stat: '500+',
     statLabel: 'Empresas Parceiras'
   },
@@ -111,9 +111,34 @@ const services: Service[] = [
       'ROI otimizado e previsível',
       'Impacto ambiental positivo'
     ],
-    imageUrl: 'https://images.pexels.com/photos/9875440/pexels-photo-9875440.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    imageUrl: 'https://res.cloudinary.com/dlthukrz8/image/upload/v1746309538/Comissionamento_UFV_AGI_II_-_Posts-img-14_arttl3.webp',
     stat: '50MW+',
     statLabel: 'Potência Instalada'
+  },
+  {
+    id: 'limpeza-manutencao',
+    icon: <Settings className="w-8 h-8" />,
+    title: 'Limpeza e Manutenção',
+    subtitle: 'Mantenha a eficiência máxima do seu sistema',
+    description: 'Garanta o desempenho ideal do seu sistema solar com nossos serviços especializados de limpeza e manutenção. Equipe técnica certificada e equipamentos profissionais para máxima durabilidade.',
+    features: [
+      'Limpeza profissional dos painéis solares',
+      'Inspeção técnica completa do sistema',
+      'Manutenção preventiva e corretiva',
+      'Verificação de conexões e cabeamento',
+      'Análise de desempenho energético',
+      'Certificado de manutenção realizada'
+    ],
+    benefits: [
+      'Aumento de até 30% na eficiência',
+      'Prolongamento da vida útil dos equipamentos',
+      'Detecção precoce de problemas',
+      'Manutenção da garantia do fabricante',
+      'Segurança operacional garantida'
+    ],
+    imageUrl: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768820048/WhatsApp_Image_2025-12-19_at_18.47.59_lwu8g5.jpg',
+    stat: '10.000+',
+    statLabel: 'Manutenções Realizadas'
   }
 ];
 
@@ -212,7 +237,6 @@ const ServiceCard = ({ service, index }: { service: Service; index: number }) =>
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {services.map((service, index) => (

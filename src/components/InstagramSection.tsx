@@ -4,19 +4,19 @@ import HarmonyBackground from './HarmonyBackground';
 function InstagramSection() {
   const instagramPosts = [
     {
-      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1753107182/517565624_733492789441282_722328339883343156_n_kmixz1.jpg',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768822996/SaveClip.App_612252553_18013841786807541_90478274022453510_n_u8op50.jpg',
       date: 'Nov 28, 2024',
-      caption: 'Tem gente economizando mais de R$700 por mês com energia solar. Já pensou o que dá pra fazer com isso? Foi o caso do Fábio, do...',
+      caption: 'Você sabe o que é comissionamento em um sistema de energia solar? O comissionamento é a etapa final (e uma das mais importantes) da instalação fotovoltaica...',
     },
     {
-      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1753107182/Voc%C3%AA_sabia_que_d%C3%A1_pra_acompanhar_a_gera%C3%A7%C3%A3o_de_energia_solar_direto_do_celular_E_o_melhor-_sem_fidhe5.jpg',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768823002/SaveClip.App_590428406_18011489762807541_230810672974759050_n_ciun6k.jpg',
       date: 'Nov 26, 2024',
-      caption: '📱 Você sabia que dá pra acompanhar a geração de energia solar direto do celular? E o melhor: sem pagar nada a mais por isso...',
+      caption: 'Quando a energia falha, o prejuízo é imediatoUma granja confiou exclusivamente no gerador. No momento crítico, ele não entrou em operação....',
     },
     {
-      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1753107182/Ato._significa_a%C3%A7%C3%A3o_trabalho_e_otimismo.Nossa_empresa_representa_atitude_comprometimento_movi_dwqqcn.jpg',
+      image: 'https://res.cloudinary.com/duzbjndww/image/upload/v1768822992/SaveClip.App_572610726_18007155080807541_415698968736361728_n_ruwhwz.jpg',
       date: 'Nov 21, 2024',
-      caption: 'Ato. significa ação, trabalho e otimismo. Nossa empresa representa atitude, comprometimento, movimento e ENERGIA ⚡... ',
+      caption: '🚨 Atenção: se você está prestes a investir em energia solar… PARE AGORA! ☀️⚡️ A Black Week da Ato Energia está chegando e vai mudar completamente o jogo...',
     },
   ];
 
